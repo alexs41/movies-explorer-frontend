@@ -1,0 +1,8 @@
+.tech-stack__item {
+    background-color: #E8E8E8;
+    border-radius: 10px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

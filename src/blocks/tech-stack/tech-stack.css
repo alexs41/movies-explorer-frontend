@@ -1,0 +1,9 @@
+.tech-stack {
+    margin: 100px auto 0 auto;
+    display: grid;
+    grid-template-columns: repeat(7, 90px);
+    grid-template-rows: 60px;
+    gap: 10px;
+    justify-content: center;
+    align-items: stretch;
+}

@@ -1,5 +1,6 @@
 import Promo from "./Promo/Promo";
 import AboutProject from "./AboutProject/AboutProject";
+import Techs from "./Techs/Techs";
 
 export default function Main(props) {
     const { } = props;
@@ -7,8 +8,8 @@ export default function Main(props) {
         <>  
             <Promo/>
             <AboutProject/>
-            {/* <NavTab/>
             <Techs/>
+            {/* <NavTab/>
             <AboutMe/>
             <Portfolio/> */}
         </>

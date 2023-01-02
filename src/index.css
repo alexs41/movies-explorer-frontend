@@ -4,6 +4,9 @@
 @import url(./blocks/root/root.css);
 
 @import url(./blocks/button/button.css);
+@import url(./blocks/main-section-header/main-section-header.css);
+@import url(./blocks/section-header/section-header.css);
+@import url(./blocks/description/description.css);
 
 @import url(./blocks/header/header.css);
 @import url(./blocks/header-container/header-container.css);
@@ -37,6 +40,11 @@
 @import url(./blocks/progress-column/__text/_grey/progress-column__text_grey.css);
 @import url(./blocks/progress-column/__text/_white/progress-column__text_white.css);
 
+@import url(./blocks/techs/techs.css);
+@import url(./blocks/techs-container/techs-container.css);
+@import url(./blocks/techs-container/__subheader/techs-container__subheader.css);
+@import url(./blocks/tech-stack/tech-stack.css);
+@import url(./blocks/tech-stack/__item/tech-stack__item.css);
 
 body {
   margin: 0;

@@ -6,7 +6,7 @@ export default function AboutProject(props) {
         <>  
             <section className="about">
                 <div className="about-container">
-                    <h2 className="about-container__header">О проекте</h2>
+                    <h2 className="about-container__header section-header">О проекте</h2>
                     <div className="about-container-columns">
                         <div className="about-container-column">
                             <h3 className="about-container-column__header">Дипломный проект включал 5 этапов</h3>
