@@ -4,9 +4,12 @@
 @import url(./blocks/root/root.css);
 
 @import url(./blocks/button/button.css);
-@import url(./blocks/main-section-header/main-section-header.css);
+@import url(./blocks/link/link.css);
 @import url(./blocks/section-header/section-header.css);
+@import url(./blocks/main-section-header/main-section-header.css);
+@import url(./blocks/main-section-header/_left/main-section-header_left.css);
 @import url(./blocks/description/description.css);
+@import url(./blocks/description/_left/description_left.css);
 
 @import url(./blocks/header/header.css);
 @import url(./blocks/header-container/header-container.css);
@@ -25,6 +28,7 @@
 @import url(./blocks/main-screen-container-columns-text/__header/main-screen-container-columns-text__header.css);
 @import url(./blocks/main-screen-container-columns-text/__subheader/main-screen-container-columns-text__subheader.css);
 
+@import url(./blocks/about/about.css);
 @import url(./blocks/about-container/about-container.css);
 @import url(./blocks/about-container/__header/about-container__header.css);
 @import url(./blocks/about-container-columns/about-container-columns.css);
@@ -45,6 +49,19 @@
 @import url(./blocks/techs-container/__subheader/techs-container__subheader.css);
 @import url(./blocks/tech-stack/tech-stack.css);
 @import url(./blocks/tech-stack/__item/tech-stack__item.css);
+
+@import url(./blocks/about-me/about-me.css);
+@import url(./blocks/about-me-container/about-me-container.css);
+@import url(./blocks/about-me-container-columns/about-me-container-columns.css);
+@import url(./blocks/about-me-container-columns/__image/about-me-container-columns__image.css);
+@import url(./blocks/about-me-container-column/about-me-container-column.css);
+@import url(./blocks/about-me-container-column/__subheader/about-me-container-column__subheader.css);
+@import url(./blocks/about-me-container-column/__link/about-me-container-column__link.css);
+@import url(./blocks/about-me-container-column/__description/about-me-container-column__description.css);
+@import url(./blocks/portfolio/portfolio.css);
+@import url(./blocks/portfolio/__header/portfolio__header.css);
+@import url(./blocks/portfolio/__item/portfolio__item.css);
+
 
 body {
   margin: 0;

@@ -1,0 +1,5 @@
+.about-me-container-columns__image {
+    justify-self: end;
+    max-height: 270px;
+    border-radius: 10px;
+}

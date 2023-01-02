@@ -1,0 +1,6 @@
+.about-me-container-columns {
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 40px;
+    margin-top: 66px;
+}

@@ -1,8 +1,8 @@
-.main-section-header {
+.portfolio__header {
     font-family: 'Inter', Arial, sans-serif;
     font-style: normal;
     font-weight: 400;
-    font-size: 50px;
-    line-height: 1.16;
-    margin: 0 auto;
+    font-size: 18px;
+    line-height: 1.11;
+    color: #A0A0A0;
 }
