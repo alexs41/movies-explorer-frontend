@@ -1,0 +1,8 @@
+.root {
+    margin: 0 auto;
+    /* max-width: 1140px; */
+    background-color: white;
+    color: black;
+    min-height: 100vh;
+    min-width: 320px;
+}

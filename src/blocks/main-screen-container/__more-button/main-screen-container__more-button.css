@@ -1,0 +1,10 @@
+.main-screen-container__more-button {
+    background-color: transparent;
+    color: black;
+    border: 1px solid black;
+    border-radius: 3px;
+    /* min-height: 32px; */
+    padding: 8px 20px;
+    margin-right: auto;
+
+}

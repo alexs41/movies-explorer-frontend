@@ -1,0 +1,42 @@
+@import url(./vendor/normalize.css);
+/*@import url(./fonts/fonts.css);
+@import url(./blocks/root/root.css); */
+@import url(./blocks/root/root.css);
+
+@import url(./blocks/button/button.css);
+
+@import url(./blocks/header/header.css);
+@import url(./blocks/header-container/header-container.css);
+@import url(./blocks/header/__logo/header__logo.css);
+@import url(./blocks/header-right-side/header-right-side.css);
+@import url(./blocks/header-right-side/__register-button/header-right-side__register-button.css);
+@import url(./blocks/header-right-side/__login-button/header-right-side__login-button.css);
+
+@import url(./blocks/main-screen/main-screen.css);
+@import url(./blocks/main-screen-container/main-screen-container.css);
+@import url(./blocks/main-screen-container/__more-button/main-screen-container__more-button.css);
+@import url(./blocks/main-screen-container-columns/main-screen-container-columns.css);
+@import url(./blocks/main-screen-container-columns/__image/main-screen-container-columns__image.css);
+
+@import url(./blocks/main-screen-container-columns-text/main-screen-container-columns-text.css);
+@import url(./blocks/main-screen-container-columns-text/__header/main-screen-container-columns-text__header.css);
+@import url(./blocks/main-screen-container-columns-text/__subheader/main-screen-container-columns-text__subheader.css);
+
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+
+

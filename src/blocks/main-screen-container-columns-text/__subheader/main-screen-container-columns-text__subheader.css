@@ -1,0 +1,10 @@
+.main-screen-container-columns-text__subheader {
+    font-family: 'Inter', Arial, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+    mix-blend-mode: normal;
+    opacity: 0.5;
+    text-align: left;
+}

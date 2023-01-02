@@ -1,0 +1,6 @@
+.main-screen-container-columns {
+    /* margin: 0 auto; */
+    display: grid;
+    grid-template-columns: auto auto;
+    margin-bottom: 84px;
+}
