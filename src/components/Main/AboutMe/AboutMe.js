@@ -23,9 +23,9 @@ export default function AboutMe(props) {
                     <div className="portfolio">
                         <h4 className="portfolio__header">Портфолио</h4>
                         <ul style={{ listStyleType: "none", paddingLeft: 0 }}>
-                            <li className="portfolio__item"><a href="https://github.com/alexs41" className="link">Статичный сайт</a></li>
-                            <li className="portfolio__item"><a href="https://github.com/alexs41" className="link">Адаптивный сайт</a></li>
-                            <li className="portfolio__item"><a href="https://github.com/alexs41" className="link">Одностраничное приложение</a></li>
+                            <li className="portfolio-item"><a href="https://github.com/alexs41" className="link portfolio-item__link">Статичный сайт<img src={arrow} className="portfolio-item__icon" alt="avatar"/></a></li>
+                            <li className="portfolio-item"><a href="https://github.com/alexs41" className="link portfolio-item__link">Адаптивный сайт<img src={arrow} className="portfolio-item__icon" alt="avatar"/></a></li>
+                            <li className="portfolio-item"><a href="https://github.com/alexs41" className="link portfolio-item__link">Одностраничное приложение<img src={arrow} className="portfolio-item__icon" alt="avatar"/></a></li>
                         </ul>
                     </div>
                     

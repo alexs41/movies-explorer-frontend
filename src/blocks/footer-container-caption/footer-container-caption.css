@@ -1,0 +1,6 @@
+.footer-container-caption {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-top: 1px solid #E8E8E8;
+}

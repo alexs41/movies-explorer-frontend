@@ -10,6 +10,7 @@
 @import url(./blocks/main-section-header/_left/main-section-header_left.css);
 @import url(./blocks/description/description.css);
 @import url(./blocks/description/_left/description_left.css);
+@import url(./blocks/description/_grey/description_grey.css);
 
 @import url(./blocks/header/header.css);
 @import url(./blocks/header-container/header-container.css);
@@ -60,8 +61,15 @@
 @import url(./blocks/about-me-container-column/__description/about-me-container-column__description.css);
 @import url(./blocks/portfolio/portfolio.css);
 @import url(./blocks/portfolio/__header/portfolio__header.css);
-@import url(./blocks/portfolio/__item/portfolio__item.css);
+@import url(./blocks/portfolio-item/portfolio-item.css);
+@import url(./blocks/portfolio-item/__icon/portfolio-item__icon.css);
+@import url(./blocks/portfolio-item/__link/portfolio-item__link.css);
 
+@import url(./blocks/footer/footer.css);
+@import url(./blocks/footer-container/footer-container.css);
+@import url(./blocks/footer-container-caption/footer-container-caption.css);
+@import url(./blocks/footer-container-links/footer-container-links.css);
+@import url(./blocks/footer-container-links/__link/footer-container-links__link.css);
 
 body {
   margin: 0;
