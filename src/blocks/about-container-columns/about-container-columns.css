@@ -4,3 +4,17 @@
     column-gap: 40px;
     margin-top: 70px;
 }
+
+@media screen and (max-width: 768px) {
+    .about-container-columns {
+        column-gap: calc(20px + (100vw - 560px)/(768 - 560)*20);;
+    }
+}
+
+@media screen and (max-width: 560px) {
+    .about-container-columns {
+        gap: 27px;
+        grid-template-columns: 1fr;
+        margin-top: 32px;
+    }
+}

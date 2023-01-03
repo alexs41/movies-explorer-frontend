@@ -1,6 +1,14 @@
 .main-screen-container-columns {
     /* margin: 0 auto; */
     display: grid;
-    grid-template-columns: auto auto;
+    /* grid-template-columns: auto auto; */
+    grid-template-areas: "text image";
     margin-bottom: 84px;
+}
+
+@media screen and (max-width: 810px) {
+    .main-screen-container-columns {
+        grid-template-areas:    "image"
+                                "text";
+    }
 }

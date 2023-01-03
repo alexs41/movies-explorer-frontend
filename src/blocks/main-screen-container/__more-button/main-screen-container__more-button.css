@@ -6,5 +6,9 @@
     /* min-height: 32px; */
     padding: 8px 20px;
     margin-right: auto;
-
+}
+@media screen and (max-width: 810px) {
+    .main-screen-container__more-button {
+        margin-left: auto;
+    }
 }

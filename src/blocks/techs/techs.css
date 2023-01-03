@@ -1,5 +1,5 @@
 .techs {
     background-color: #F5F5F5;
-    padding-top: 100px;
-    padding-bottom: 100px;
+    padding-top: var(--padding-vertical);
+    padding-bottom: var(--padding-vertical);
 }

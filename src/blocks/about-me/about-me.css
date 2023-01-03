@@ -1,4 +1,4 @@
 .about-me {
-    padding-top: 110px;
-    padding-bottom: 110px;
+    padding-top: var(--padding-vertical);
+    padding-bottom: var(--padding-vertical);
 }

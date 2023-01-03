@@ -5,7 +5,7 @@ export default function Techs(props) {
         <section className="techs">
             <div className="techs-container">
                 <h2 className="section-header">Технологии</h2>
-                <h2 className="main-section-header">7 технологий</h2>
+                <h2 className="main-section-header techs-container__header">7 технологий</h2>
                 <p className="description techs-container__subheader">На курсе веб-разработки мы освоили технологии, которые применили в дипломном проекте.</p>
                 <div className="tech-stack">
                     <div className="tech-stack__item">HTML</div>

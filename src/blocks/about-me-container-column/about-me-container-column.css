@@ -1,4 +1,5 @@
 .about-me-container-column {
     max-width: 600px;
     position: relative;
+    grid-area: about-me-container;
 }

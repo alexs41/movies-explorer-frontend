@@ -8,3 +8,8 @@
     opacity: 0.5;
     text-align: left;
 }
+@media screen and (max-width: 810px) {
+    .main-screen-container-columns-text__subheader{
+        text-align: center;
+    }
+}

@@ -15,7 +15,7 @@ export default function AboutMe(props) {
                             <p className="description description_left about-me-container-column__description">Я родился и живу в Саратове, закончил факультет экономики СГУ. У меня есть жена
                             и дочь. Я люблю слушать музыку, а ещё увлекаюсь бегом. Недавно начал кодить. С 2015 года работал в компании «СКБ Контур». После того, как прошёл курс по веб-разработке, начал заниматься фриланс-заказами и ушёл с постоянной работы.</p>
                             <div className="about-me-container-column__link">
-                                <a href="https://github.com/alexs41" className="link">Github https://github.com/alexs41</a>
+                                <a href="https://github.com/alexs41" className="link">Профиль Github ↗</a>
                             </div>
                         </div>
                         <img src={avatar} className="about-me-container-columns__image" alt="avatar"/>

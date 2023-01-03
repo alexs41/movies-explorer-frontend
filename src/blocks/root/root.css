@@ -6,3 +6,64 @@
     min-height: 100vh;
     min-width: 320px;
 }
+
+:root {
+    /* шрифты */
+    --main-header-font-size-50px: 50px;
+    --section-header-font-size-22px: 22px;
+    --section-subheader-font-size-20px: 20px;
+    --subheader-font-size-18px: 18px;
+    --description-font-size-14px: 14px;
+    --tech-stack-font-size-14px: 14px;
+    --techs-font-size-30px: 30px;
+    --text-font-size-18px: 18px;
+    /* Отступы */
+    --padding-side: 50px;
+    --padding-vertical: 110px;
+    
+    
+
+}
+
+@media screen and (max-width: 1280px) {
+    :root {
+        --main-header-font-size-50px: calc(40px + (100vw - 768px)/(1280 - 768)*10);
+        --subheader-font-size-18px: calc(12px + (100vw - 768px)/(1280 - 768)*6);
+        --description-font-size-14px: calc(12px + (100vw - 768px)/(1280 - 768)*2);
+        --tech-stack-font-size-14px: calc(12px + (100vw - 768px)/(1280 - 768)*2);
+        --techs-font-size-30px: calc(28px + (100vw - 768px)/(1280 - 768)*2);
+        /* Отступы */
+        --padding-vertical: calc(90px + (100vw - 768px)/(1280 - 768)*20);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    :root {
+        --main-header-font-size-50px: calc(30px + (100vw - 320px)/(768 - 320)*10);
+        --section-header-font-size-22px: calc(18px + (100vw - 320px)/(768 - 320)*4);
+        --section-subheader-font-size-20px: calc(18px + (100vw - 320px)/(768 - 320)*2);
+        --subheader-font-size-18px: calc(11px + (100vw - 320px)/(768 - 320)*1);
+        --description-font-size-14px: calc(11px + (100vw - 320px)/(768 - 320)*1);
+        --tech-stack-font-size-14px: 12px;
+        --techs-font-size-30px: calc(18px + (100vw - 320px)/(768 - 320)*10);
+        --text-font-size-18px: calc(14px + (100vw - 320px)/(768 - 320)*4);
+        /* Отступы */
+        --padding-side: calc(14px + (100vw - 320px)/(768 - 320)*36);
+        --padding-vertical: calc(70px + (100vw - 320px)/(768 - 320)*20);
+    }
+}
+
+@media screen and (max-width: 320px) {
+    :root {
+        --main-header-font-size-50px: 30px;
+        --section-header-font-size-22px: 18px;
+        --section-subheader-font-size-20px: 18px;
+        --subheader-font-size-18px: 11px;
+        --description-font-size-14px: 11px;
+        --techs-font-size-30px: 18px;
+        --text-font-size-18px: 14px;
+        /* Отступы */
+        --padding-side: 14px;
+        --padding-vertical: 70px;
+    }
+}

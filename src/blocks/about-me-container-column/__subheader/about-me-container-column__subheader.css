@@ -1,3 +1,5 @@
 .about-me-container-column__subheader {
     text-align: left;
+    font-size: var(--subheader-font-size-18px);
+    font-weight: 500;
 }

@@ -2,7 +2,7 @@
     font-family: 'Inter', Arial, sans-serif;
     font-style: normal;
     font-weight: 400;
-    font-size: 14px;
+    font-size: var(--description-font-size-14px);
     line-height: 1.43;
     text-align: left;
 }

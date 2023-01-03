@@ -3,4 +3,12 @@
     flex-direction: row;
     justify-content: space-between;
     border-top: 1px solid #E8E8E8;
+    padding: 20px 0;
+
+}
+
+@media screen and (max-width: 425px) {
+    .footer-container-caption {
+        flex-direction: column-reverse;
+    }
 }

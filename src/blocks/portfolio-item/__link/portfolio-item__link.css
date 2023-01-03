@@ -3,4 +3,5 @@
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
+    font-size: var(--techs-font-size-30px);
 }

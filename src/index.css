@@ -47,6 +47,7 @@
 
 @import url(./blocks/techs/techs.css);
 @import url(./blocks/techs-container/techs-container.css);
+@import url(./blocks/techs-container/__header/techs-container__header.css);
 @import url(./blocks/techs-container/__subheader/techs-container__subheader.css);
 @import url(./blocks/tech-stack/tech-stack.css);
 @import url(./blocks/tech-stack/__item/tech-stack__item.css);
@@ -68,6 +69,7 @@
 @import url(./blocks/footer/footer.css);
 @import url(./blocks/footer-container/footer-container.css);
 @import url(./blocks/footer-container-caption/footer-container-caption.css);
+@import url(./blocks/footer-container-caption/__copyright/footer-container-caption__copyright.css);
 @import url(./blocks/footer-container-links/footer-container-links.css);
 @import url(./blocks/footer-container-links/__link/footer-container-links__link.css);
 
