@@ -1,0 +1,4 @@
+.filter-checkbox {
+    display: flex;
+    flex-direction: row;
+}

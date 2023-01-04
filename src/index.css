@@ -1,6 +1,5 @@
 @import url(./vendor/normalize.css);
-/*@import url(./fonts/fonts.css);
-@import url(./blocks/root/root.css); */
+@import url(./fonts/fonts.css);
 @import url(./blocks/root/root.css);
 
 @import url(./blocks/button/button.css);
@@ -15,9 +14,12 @@
 @import url(./blocks/header/header.css);
 @import url(./blocks/header-container/header-container.css);
 @import url(./blocks/header/__logo/header__logo.css);
+@import url(./blocks/header-center-side/header-center-side.css);
 @import url(./blocks/header-right-side/header-right-side.css);
 @import url(./blocks/header-right-side/__register-button/header-right-side__register-button.css);
 @import url(./blocks/header-right-side/__login-button/header-right-side__login-button.css);
+@import url(./blocks/account-button/account-button.css);
+@import url(./blocks/account-button/__icon/account-button__icon.css);
 
 @import url(./blocks/main-screen/main-screen.css);
 @import url(./blocks/main-screen-container/main-screen-container.css);
@@ -72,6 +74,16 @@
 @import url(./blocks/footer-container-caption/__copyright/footer-container-caption__copyright.css);
 @import url(./blocks/footer-container-links/footer-container-links.css);
 @import url(./blocks/footer-container-links/__link/footer-container-links__link.css);
+
+@import url(./blocks/search-form/search-form.css);
+@import url(./blocks/search-form-container/search-form-container.css);
+@import url(./blocks/form/form.css);
+@import url(./blocks/form/__submit-button/form__submit-button.css);
+@import url(./blocks/form/__input/form__input.css);
+
+@import url(./blocks/filter-checkbox/filter-checkbox.css);
+
+@import url(./components/Movies/FilterCheckbox/FilterCheckbox.css);
 
 body {
   margin: 0;
