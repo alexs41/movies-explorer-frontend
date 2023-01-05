@@ -85,6 +85,26 @@
 
 @import url(./components/Movies/FilterCheckbox/FilterCheckbox.css);
 
+@import url(./blocks/page-404/page-404.css);
+@import url(./blocks/page-404-container/page-404-container.css);
+@import url(./blocks/page-404-container/__header/page-404-container__header.css);
+@import url(./blocks/page-404-container/__subheader/page-404-container__subheader.css);
+@import url(./blocks/page-404-container/__back/page-404-container__back.css);
+
+@import url(./blocks/profile/profile.css);
+@import url(./blocks/profile-container/profile-container.css);
+
+@import url(./blocks/profile-form/profile-form.css);
+@import url(./blocks/profile-form/__input/profile-form__input.css);
+@import url(./blocks/profile-form/__submit-button/profile-form__submit-button.css);
+@import url(./blocks/profile-form/__input-error/profile-form__input-error.css);
+@import url(./blocks/profile-form-input-container/profile-form-input-container.css);
+@import url(./blocks/profile-form-input/profile-form-input.css);
+@import url(./blocks/profile-form-input/__placeholder/profile-form-input__placeholder.css);
+@import url(./blocks/profile-form/__header/profile-form__header.css);
+@import url(./blocks/profile-form-down-part/profile-form-down-part.css);
+@import url(./blocks/profile-form-down-part/__span/profile-form-down-part__span.css);
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',

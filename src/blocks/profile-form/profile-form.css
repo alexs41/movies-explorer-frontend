@@ -1,0 +1,10 @@
+.profile-form {
+    max-height: 482px;
+    max-width: 410px;
+    width: 410px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
