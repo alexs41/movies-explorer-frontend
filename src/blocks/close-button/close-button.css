@@ -1,0 +1,14 @@
+.close-button {
+    background-image: url('../../images/close-icon.svg');
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 22px;
+    height: 22px;
+    min-width: 22px;
+    min-height: 22px;
+    border: none;
+    position: absolute;
+    right: 25px;
+    top: 25px;
+}

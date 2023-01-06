@@ -3,6 +3,7 @@
 @import url(./blocks/root/root.css);
 
 @import url(./blocks/button/button.css);
+@import url(./blocks/close-button/close-button.css);
 @import url(./blocks/link/link.css);
 @import url(./blocks/section-header/section-header.css);
 @import url(./blocks/main-section-header/main-section-header.css);
@@ -18,6 +19,7 @@
 @import url(./blocks/header-right-side/header-right-side.css);
 @import url(./blocks/header-right-side/__register-button/header-right-side__register-button.css);
 @import url(./blocks/header-right-side/__login-button/header-right-side__login-button.css);
+@import url(./blocks/header-right-side/__burger/header-right-side__burger.css);
 @import url(./blocks/account-button/account-button.css);
 @import url(./blocks/account-button/__icon/account-button__icon.css);
 
@@ -117,6 +119,10 @@
 
 @import url(./blocks/register/register.css);
 @import url(./blocks/register-container/register-container.css);
+
+@import url(./blocks/nav-bar/nav-bar.css);
+@import url(./blocks/nav-bar-menu/nav-bar-menu.css);
+@import url(./blocks/nav-bar-menu/__item/nav-bar-menu__item.css);
 
 body {
   margin: 0;

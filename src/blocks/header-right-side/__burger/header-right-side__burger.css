@@ -1,0 +1,10 @@
+.header-right-side__burger {
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    min-height: 44px;
+    border: none;
+    background-color: transparent;
+}
