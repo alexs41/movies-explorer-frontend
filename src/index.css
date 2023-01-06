@@ -95,17 +95,28 @@
 @import url(./blocks/profile-container/profile-container.css);
 
 @import url(./blocks/profile-form/profile-form.css);
+@import url(./blocks/profile-form/_register/profile-form_register.css);
 @import url(./blocks/profile-form/__input/profile-form__input.css);
+@import url(./blocks/profile-form/__input/_register/profile-form__input_register.css);
 @import url(./blocks/profile-form/__submit-button/profile-form__submit-button.css);
 @import url(./blocks/profile-form/__input-error/profile-form__input-error.css);
 @import url(./blocks/profile-form-input-container/profile-form-input-container.css);
 @import url(./blocks/profile-form-input/profile-form-input.css);
 @import url(./blocks/profile-form-input/__placeholder/profile-form-input__placeholder.css);
+@import url(./blocks/profile-form-input/__placeholder/_grey/profile-form-input__placeholder_grey.css);
+@import url(./blocks/profile-form-input/_register/profile-form-input_register.css);
 @import url(./blocks/profile-form/__header/profile-form__header.css);
+@import url(./blocks/profile-form/__header/_left/profile-form__header_left.css);
 @import url(./blocks/profile-form/__edit-button/profile-form__edit-button.css);
 @import url(./blocks/profile-form/__exit-button/profile-form__exit-button.css);
 @import url(./blocks/profile-form-down-part/profile-form-down-part.css);
 @import url(./blocks/profile-form-down-part/__span/profile-form-down-part__span.css);
+@import url(./blocks/profile-form-down-part/__span/_register/profile-form-down-part__span_register.css);
+@import url(./blocks/profile-form-down-part/__сaption/profile-form-down-part__сaption.css);
+@import url(./blocks/profile-form-down-part/__link/profile-form-down-part__link.css);
+
+@import url(./blocks/register/register.css);
+@import url(./blocks/register-container/register-container.css);
 
 body {
   margin: 0;
