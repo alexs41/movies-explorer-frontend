@@ -102,6 +102,8 @@
 @import url(./blocks/profile-form-input/profile-form-input.css);
 @import url(./blocks/profile-form-input/__placeholder/profile-form-input__placeholder.css);
 @import url(./blocks/profile-form/__header/profile-form__header.css);
+@import url(./blocks/profile-form/__edit-button/profile-form__edit-button.css);
+@import url(./blocks/profile-form/__exit-button/profile-form__exit-button.css);
 @import url(./blocks/profile-form-down-part/profile-form-down-part.css);
 @import url(./blocks/profile-form-down-part/__span/profile-form-down-part__span.css);
 

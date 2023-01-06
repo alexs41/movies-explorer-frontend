@@ -1,0 +1,12 @@
+.profile-form__exit-button {
+    font-family: 'Inter', Arial, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+    text-align: center;
+    background-color: transparent;
+    color: #FF004D;
+    width: auto;
+    border: 0;
+}

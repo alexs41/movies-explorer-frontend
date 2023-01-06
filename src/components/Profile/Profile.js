@@ -42,6 +42,8 @@ export default function Profile(props) {
                         <div className="profile-form-down-part">
                             <div className="profile-form-down-part__span"><span className="profile-form__input-error">При обновлении профиля произошла ошибка.</span></div>
                             <button className="button profile-form__submit-button profile-form__submit-button_edit-profile" type="submit">Сохранить</button>
+                            {/* <button className="button profile-form__edit-button" type="submit">Редактировать</button>
+                            <button className="button profile-form__exit-button" type="submit">Выйти из аккаунта</button> */}
                         </div>
                         
                     </div>
