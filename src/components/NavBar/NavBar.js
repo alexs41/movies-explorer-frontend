@@ -1,4 +1,3 @@
-import bugerIcon from '../../images/burger.svg';
 import accountButtonIcon from '../../images/account-button-icon.svg';
 
 export default function NavBar(props) {

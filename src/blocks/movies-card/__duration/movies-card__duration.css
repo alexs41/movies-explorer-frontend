@@ -1,0 +1,17 @@
+.movies-card__duration {
+    margin: 0;
+    padding: 3px 4px;
+    position: absolute;
+    right: 0px;
+    bottom: 13px;
+    display: inline-block;
+
+    font-family: 'Inter', Arial, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 11px;
+    line-height: .91;
+    color: #A0A0A0;
+    background-color: #F4F4F4;
+    border-radius: 3px;
+}
