@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from "react-router-dom";
 
 export default function Register(props) {
     let { } = props;
@@ -52,11 +53,10 @@ export default function Register(props) {
                         </div>
                         <div className="profile-form-down-part">
                             <button className="button profile-form__submit-button profile-form__submit-button_edit-profile" type="submit">Зарегистрироваться</button>
-                            <p className="profile-form-down-part__сaption">Уже зарегистрированы? <a href='#' className='link profile-form-down-part__link'>Войти</a></p>
+                            <p className="profile-form-down-part__сaption">Уже зарегистрированы? <Link className="link profile-form-down-part__link" to="/signin" style={{ textDecoration: 'none' }}>Войти</Link></p>
                             {/* <button className="button profile-form__edit-button" type="submit">Редактировать</button>
                             <button className="button profile-form__exit-button" type="submit">Выйти из аккаунта</button> */}
                         </div>
-                        
                     </div>
                 </div>
             </div>

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from "react-router-dom";
 
 export default function Login(props) {
     let { } = props;
@@ -47,7 +48,8 @@ export default function Login(props) {
                         </div>
                         <div className="profile-form-down-part">
                             <button className="button profile-form__submit-button profile-form__submit-button_edit-profile" type="submit">Войти</button>
-                            <p className="profile-form-down-part__сaption">Ещё не зарегистрированы? <a href='#' className='link profile-form-down-part__link'>Регистрация</a></p>
+                            <p className="profile-form-down-part__сaption">Ещё не зарегистрированы? <Link className="link profile-form-down-part__link" to="/signup" style={{ textDecoration: 'none' }}>Регистрация</Link></p>
+                            
                             {/* <button className="button profile-form__edit-button" type="submit">Редактировать</button>
                             <button className="button profile-form__exit-button" type="submit">Выйти из аккаунта</button> */}
                         </div>

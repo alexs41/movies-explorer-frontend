@@ -1,4 +1,5 @@
 import landingLogo from '../../../images/text__COLOR_landing-logo.png';
+import { Link, animateScroll as scroll } from "react-scroll";
 
 export default function Promo(props) {
     const { } = props;
@@ -12,8 +13,8 @@ export default function Promo(props) {
                             <p className="main-screen-container-columns-text__subheader">Листайте ниже, чтобы узнать больше про этот проект и его создателя.</p>
                         </div>
                         <img src={landingLogo} className="main-screen-container-columns__image" alt="main"/>
-                    </div>
-                    <button className="button main-screen-container__more-button">Узнать больше</button>    
+                    </div>    
+                    <Link className="button main-screen-container__more-button" to="about" smooth={true} offset={0} duration={500}>Узнать больше</Link>
                 </div>
             </section>
         </>

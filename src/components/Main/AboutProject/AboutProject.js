@@ -1,10 +1,9 @@
 // import landingLogo from '../../../images/text__COLOR_landing-logo.png';
-
 export default function AboutProject(props) {
     const { } = props;
     return (
         <>  
-            <section className="about">
+            <section className="about" id={"about"}>
                 <div className="about-container">
                     <h2 className="about-container__header section-header">О проекте</h2>
                     <div className="about-container-columns">

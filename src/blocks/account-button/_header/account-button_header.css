@@ -1,11 +1,5 @@
-.header-center-side {
-    display: grid;
-    grid-template-columns: auto auto;
-    gap: 16px;
-}
-
 @media screen and (max-width: 768px) {
-    .header-center-side {
+    .account-button_header {
         visibility: hidden;
         display: none;
         height: 0;

@@ -18,11 +18,14 @@
 @import url(./blocks/header-container/header-container.css);
 @import url(./blocks/header/__logo/header__logo.css);
 @import url(./blocks/header-center-side/header-center-side.css);
+@import url(./blocks/header-center-side/__link/header-center-side__link.css);
+@import url(./blocks/header-center-side/__link/_active/header-center-side__link_active.css);
 @import url(./blocks/header-right-side/header-right-side.css);
 @import url(./blocks/header-right-side/__register-button/header-right-side__register-button.css);
 @import url(./blocks/header-right-side/__login-button/header-right-side__login-button.css);
 @import url(./blocks/header-right-side/__burger/header-right-side__burger.css);
 @import url(./blocks/account-button/account-button.css);
+@import url(./blocks/account-button/_header/account-button_header.css);
 @import url(./blocks/account-button/__icon/account-button__icon.css);
 
 @import url(./blocks/main-screen/main-screen.css);
@@ -125,7 +128,7 @@
 @import url(./blocks/nav-bar/nav-bar.css);
 @import url(./blocks/nav-bar-menu/nav-bar-menu.css);
 @import url(./blocks/nav-bar-menu/__item/nav-bar-menu__item.css);
-@import url(./blocks/nav-bar-menu/__item/_underline/nav-bar-menu__item_underline.css);
+@import url(./blocks/nav-bar-menu/__item/_active/nav-bar-menu__item_active.css);
 
 @import url(./blocks/card-list/card-list.css);
 @import url(./blocks/card-list-container/card-list-container.css);

@@ -1,10 +1,22 @@
 .header-right-side__burger {
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 44px;
-    height: 44px;
-    min-width: 44px;
-    min-height: 44px;
-    border: none;
-    background-color: transparent;
+    visibility: hidden;
+    display: none;
+    height: 0;
+    padding: 0;
+}
+
+@media screen and (max-width: 768px) {
+    .header-right-side__burger {
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 44px;
+        height: 44px;
+        min-width: 44px;
+        min-height: 44px;
+        border: none;
+        background-color: transparent;
+
+        visibility: visible;
+        display: block;
+    }
 }

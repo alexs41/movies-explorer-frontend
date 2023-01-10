@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Header from '../Header/Header';
 
 export default function Profile(props) {
     let { } = props;
@@ -23,7 +24,8 @@ export default function Profile(props) {
         setEmail(e.target.value);
     }
     return (
-        <>
+        <>  
+            <Header/>
             <div className="profile">
                 <div className="profile-container">
                     <div className="profile-form">
@@ -40,10 +42,10 @@ export default function Profile(props) {
                             </div>
                         </div>
                         <div className="profile-form-down-part">
-                            <div className="profile-form-down-part__span"><span className="profile-form__input-error">При обновлении профиля произошла ошибка.</span></div>
-                            <button className="button profile-form__submit-button profile-form__submit-button_edit-profile" type="submit">Сохранить</button>
-                            {/* <button className="button profile-form__edit-button" type="submit">Редактировать</button>
-                            <button className="button profile-form__exit-button" type="submit">Выйти из аккаунта</button> */}
+                            {/* <div className="profile-form-down-part__span"><span className="profile-form__input-error">При обновлении профиля произошла ошибка.</span></div> */}
+                            {/* <button className="button profile-form__submit-button profile-form__submit-button_edit-profile" type="submit">Сохранить</button> */}
+                            <button className="button profile-form__edit-button" type="submit">Редактировать</button>
+                            <button className="button profile-form__exit-button" type="submit">Выйти из аккаунта</button>
                         </div>
                         
                     </div>
