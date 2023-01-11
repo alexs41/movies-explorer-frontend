@@ -137,6 +137,7 @@
 @import url(./blocks/card-list-more/__more-button/card-list-more__more-button.css);
 
 @import url(./blocks/movies-card/movies-card.css);
+@import url(./blocks/movies-card-image-container/movies-card-image-container.css);
 @import url(./blocks/movies-card/__image/movies-card__image.css);
 @import url(./blocks/movies-card/__header/movies-card__header.css);
 @import url(./blocks/movies-card/__duration/movies-card__duration.css);

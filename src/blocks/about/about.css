@@ -1,4 +1,4 @@
 .about {
     padding-top: var(--padding-vertical);
-    padding-bottom: var(--padding-vertical);
+    padding-bottom: calc(var(--padding-vertical) + 10px);
 }

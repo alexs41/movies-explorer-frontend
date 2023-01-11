@@ -1,12 +1,13 @@
 .main-screen-container-columns__image {
     margin-left: auto;
     grid-area: image;
-    max-width: 72%;
+    max-width: 77%;
 }
 
 @media screen and (max-width: 810px) {
     .main-screen-container-columns__image {
         margin-right: auto;
         margin-bottom: 48px;
+        max-width: 72%;
     }
 }

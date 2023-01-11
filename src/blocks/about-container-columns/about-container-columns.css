@@ -13,8 +13,8 @@
 
 @media screen and (max-width: 560px) {
     .about-container-columns {
-        gap: 27px;
+        gap: 57px;
         grid-template-columns: 1fr;
-        margin-top: 32px;
+        margin-top: 65px;
     }
 }

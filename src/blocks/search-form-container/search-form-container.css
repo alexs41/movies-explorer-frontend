@@ -3,9 +3,16 @@
     margin: 0 auto;
     display: flex;
     flex-direction: row;
-    gap: 40px;
-    padding-left: var(--padding-side);
-    padding-right: var(--padding-side);
-    /* border-bottom: 1px solid #AAAAAA; */
+    column-gap: 40px;
+    row-gap: 22px;
+    border-bottom: 1px solid #AAAAAA;
     padding-bottom: 80px;
+}
+
+@media screen and (max-width: 768px) {
+    .search-form-container {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 }

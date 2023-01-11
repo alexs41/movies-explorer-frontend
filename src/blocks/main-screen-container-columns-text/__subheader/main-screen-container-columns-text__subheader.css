@@ -7,9 +7,12 @@
     mix-blend-mode: normal;
     opacity: 0.5;
     text-align: left;
+    max-width: 310px;
 }
 @media screen and (max-width: 810px) {
     .main-screen-container-columns-text__subheader{
         text-align: center;
+        margin-left: auto;
+        margin-right: auto;
     }
 }

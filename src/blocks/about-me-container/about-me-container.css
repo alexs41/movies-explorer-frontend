@@ -1,6 +1,7 @@
 .about-me-container {
-    margin: 0 auto;
+    margin: 0 auto -34px auto;
     max-width: 1140px;
     padding-left: var(--padding-side);
     padding-right: var(--padding-side);
+
 }

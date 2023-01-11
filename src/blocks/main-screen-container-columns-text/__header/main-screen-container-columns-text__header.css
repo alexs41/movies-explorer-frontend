@@ -1,10 +1,22 @@
 .main-screen-container-columns-text__header {
     text-align: left;
     margin-bottom: 36px;
+    letter-spacing: normal;
 }
 
 @media screen and (max-width: 810px) {
     .main-screen-container-columns-text__header {
         text-align: center;
+        letter-spacing: -0.04em;
+    }
+}
+@media screen and (max-width: 768px) {
+    .main-screen-container-columns-text__header {
+        margin-bottom: calc(24px + (100vw - 320px)/(768 - 320)*12);
+    }
+}
+@media screen and (max-width: 320px) {
+    .main-screen-container-columns-text__header {
+        margin-bottom: 24px;
     }
 }

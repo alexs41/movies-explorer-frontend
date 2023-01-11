@@ -10,3 +10,14 @@
     font-size: 12px;
     line-height: 1.33;
 }
+
+@media screen and (max-width: 768px) {
+    .header-right-side__register-button {
+        font-size: calc(10px + (100vw - 320px)/(768 - 320)*2);
+    }
+}
+@media screen and (max-width: 320px) {
+    .header-right-side__register-button {
+        font-size: 10px;
+    }
+}

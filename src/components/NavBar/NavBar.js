@@ -1,12 +1,35 @@
-import { useNavigate, Link, NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import React, { useEffect } from 'react';
 
 import accountButtonIcon from '../../images/account-button-icon.svg';
 
 export default function NavBar(props) {
     const { isOpen, handleClickCloseButton } = props;
+
+    
+
+    function handleBlackAreaClosePopup(e) {
+        if (e.target === e.currentTarget) { 
+            handleClickCloseButton(); 
+        };
+    }
+
+    useEffect(() => {
+        function handleEscClose(e) {
+            if (e.key === 'Escape') {
+                handleClickCloseButton();
+            }
+        }
+        if (isOpen === true) {
+            document.addEventListener("keydown", handleEscClose);
+        } else {
+            document.removeEventListener("keydown", handleEscClose);
+        }
+    }, [handleClickCloseButton, isOpen]);
+
     return (
         <>
-            <div className={`popup ${isOpen ? 'popup_opened' : ''}`}>
+            <div className={`popup ${isOpen ? 'popup_opened' : ''}`} onClick={handleBlackAreaClosePopup}>
                 <div className="nav-bar">
                     <button className="button close-button" onClick={handleClickCloseButton}></button>
                     <ul className="nav-bar-menu">

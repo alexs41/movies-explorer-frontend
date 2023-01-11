@@ -10,5 +10,6 @@
     .main-screen-container-columns {
         grid-template-areas:    "image"
                                 "text";
+        margin-bottom: 67px;
     }
 }

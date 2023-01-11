@@ -7,7 +7,10 @@ export default function MoviesCard(props) {
     return (
         <>
             <div className="movies-card">
-                <img src={thumbnail} alt={nameEN} className="movies-card__image"/>
+                <div className="movies-card-image-container">
+                    <img src={thumbnail} alt={nameEN} className="movies-card__image"/>
+                </div>
+                
                 <h4 className="movies-card__header">{nameRU}</h4>
 
                 <p className="movies-card__duration">{ `${Math.floor(duration / 60)}ч ${duration % 60}м`} </p>

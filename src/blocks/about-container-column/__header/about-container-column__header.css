@@ -5,4 +5,11 @@
     font-size: var(--section-subheader-font-size-20px);
     line-height: 24px;
     text-align: left;
+    margin: 0 auto 25px auto;
+    letter-spacing: -0.04em;
+}
+@media screen and (max-width: 560px) {
+    .about-container-column__header {
+        margin-bottom: 12px;
+    }
 }

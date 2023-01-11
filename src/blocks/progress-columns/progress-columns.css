@@ -2,6 +2,7 @@
     display: grid;
     grid-template-columns: 1fr 4fr;
     margin-top: 110px;
+    row-gap: 5px;
 }
 @media screen and (max-width: 1280px) {
     .progress-columns {

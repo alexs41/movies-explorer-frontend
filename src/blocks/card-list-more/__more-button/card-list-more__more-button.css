@@ -9,5 +9,7 @@
     line-height: 1.25;
     height: 36px;
     min-height: 36px;
-    width: 320px;
+    max-width: 320px;
+    width: 100%;
+    min-width: 240px;
 }
