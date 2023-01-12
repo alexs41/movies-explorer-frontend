@@ -1,7 +1,7 @@
 .profile-form__input_register {
     width: 100%;
     font-size: 13px;
-    background-color: #F4F4F4;
+    background-color: var(--basic-seventh-tint-color);
     border-radius: 8px;
     height: 46px;
     text-align: left;

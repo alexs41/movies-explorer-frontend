@@ -1,5 +1,5 @@
 .main-screen-container-columns-text__subheader {
-    font-family: 'Inter', Arial, sans-serif;
+    font-family: var(--main-font);
     font-style: normal;
     font-weight: 400;
     font-size: 13px;

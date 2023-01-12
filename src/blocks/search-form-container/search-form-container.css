@@ -5,7 +5,7 @@
     flex-direction: row;
     column-gap: 40px;
     row-gap: 22px;
-    border-bottom: 1px solid #AAAAAA;
+    border-bottom: 1px solid var(--basic-second-tint-color);
     padding-bottom: 80px;
 }
 
@@ -14,5 +14,11 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        padding-bottom: calc(34px + (100vw - 320px)/(768 - 320)*46);
+    }
+}
+@media screen and (max-width: 320px) {
+    .search-form-container {
+        padding-bottom: 34px;
     }
 }

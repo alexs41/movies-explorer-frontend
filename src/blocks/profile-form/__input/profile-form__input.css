@@ -1,7 +1,7 @@
 .profile-form__input {
-    /* border-bottom: 1px solid #E8E8E8; */
+    /* border-bottom: 1px solid var(--basic-fourth-tint-color); */
     height: auto;
-    font-family: 'Inter', Arial, sans-serif;
+    font-family: var(--main-font);
     font-style: normal;
     font-weight: 400;
     font-size: 11px;

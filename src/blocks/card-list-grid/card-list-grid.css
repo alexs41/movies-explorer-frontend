@@ -5,7 +5,7 @@
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(auto-fit, auto);
     column-gap: 30px;
-    row-gap: 60px;
+    row-gap: 44px;
     justify-content: center;
     align-items: stretch;
 }
@@ -16,17 +16,17 @@
 }
 @media screen and (max-width: 768px) {
     .card-list-grid {
-        margin-top: calc(50px + (100vw - 320px)/(768 - 320)*20);
+        margin-top: calc(40px + (100vw - 320px)/(768 - 320)*30);
     }
 }
 @media screen and (max-width: 719px) {
     .card-list-grid {
         grid-template-columns: repeat(1, minmax(300px, 360px));
-        row-gap: 22px;
+        row-gap: 26px;
     }
 }
 @media screen and (max-width: 320px) {
     .card-list-grid {
-        margin-top: 50px;
+        margin-top: 40px;
     }
 }

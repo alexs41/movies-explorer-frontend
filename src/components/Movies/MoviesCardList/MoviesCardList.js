@@ -12,8 +12,6 @@ export default function MoviesCardList(props) {
                         <MoviesCard />
                         <MoviesCard />
                         <MoviesCard />
-                        <MoviesCard />
-                        
                     </div>
                     <div className="card-list-more">
                         <button className="button card-list-more__more-button">Ещё</button>

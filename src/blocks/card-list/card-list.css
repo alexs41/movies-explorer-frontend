@@ -1,4 +1,4 @@
 .card-list {
     margin: 0 auto;
-    background-color: #FAFAFA;
+    background-color: var(--basic-ninth-tint-color);
 }

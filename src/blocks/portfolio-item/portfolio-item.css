@@ -3,7 +3,7 @@
     list-style-type: none;
     margin-left: 0;
     padding-left: 0;
-    font-family: 'Inter', Arial, sans-serif;
+    font-family: var(--main-font);
     font-style: normal;
     font-weight: 400;
     font-size: 30px;
@@ -12,7 +12,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    border-bottom: 1px solid #E8E8E8;
+    border-bottom: 1px solid var(--basic-fourth-tint-color);
     padding: 19px 0;
 }
 .portfolio-item:last-child {

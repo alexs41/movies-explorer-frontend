@@ -1,5 +1,5 @@
 .about-container-column__header {
-    font-family: 'Inter', Arial, sans-serif;
+    font-family: var(--main-font);
     font-style: normal;
     font-weight: 400;
     font-size: var(--section-subheader-font-size-20px);

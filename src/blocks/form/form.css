@@ -1,5 +1,5 @@
 .form {
-    border: 1.5px solid #AAAAAA;
+    border: 1.5px solid var(--basic-second-tint-color);
     border-radius: 24px;
     display: flex;
     flex-direction: row;

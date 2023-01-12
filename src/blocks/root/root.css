@@ -1,14 +1,16 @@
 .root {
     margin: 0 auto;
     /* max-width: 1140px; */
-    background-color: #FAFAFA;
-    color: black;
+    background-color: var(--basic-ninth-tint-color);
+    color: var(--basic-black-color);
     min-height: 100vh;
     min-width: 320px;
 }
 
 :root {
     /* шрифты */
+    --main-font: 'Inter', Arial, sans-serif;
+    /* размеры шрифта */
     --main-header-font-size-50px: 50px;
     --section-header-font-size-22px: 22px;
     --section-subheader-font-size-20px: 20px;
@@ -22,16 +24,33 @@
     --font-size-14px: 14px;
     --font-size-14-14-11px: 14px;
     --font-size-13-13-12px: 13px;
+    --font-size-13-13-11px: 13px;
     /* Отступы */
     --padding-side: 50px;
     --padding-vertical: 110px;
-    
+    /* COLOR PALETTE */
+    /* Basic Colors */
+    --basic-black-color: black;
+    --basic-first-tint-color: #A0A0A0;
+    --basic-second-tint-color: #AAAAAA;
+    --basic-third-tint-color: #DDDEE3;
+    --basic-fourth-tint-color: #E8E8E8;
+    --basic-sixth-tint-color: #F2F2F2;
+    --basic-seventh-tint-color: #F4F4F4;
+    --basic-eighth-tint-color: #F5F5F5;
+    --basic-ninth-tint-color: #FAFAFA;
+    /* Accent Colors */
+    --accent-blue-tint-color: #3456F3;
+    --accent-green-tint-color: #2BE080;
+    /* Critical Colors */
+    --critical-red-color: #EE3465;
     
 
 }
 
 @media screen and (max-width: 1280px) {
     :root {
+        /* размеры шрифта */
         --main-header-font-size-50px: calc(40px + (100vw - 768px)/(1280 - 768)*10);
         --subheader-font-size-18px: calc(12px + (100vw - 768px)/(1280 - 768)*6);
         --description-font-size-14px: calc(12px + (100vw - 768px)/(1280 - 768)*2);
@@ -44,6 +63,7 @@
 
 @media screen and (max-width: 768px) {
     :root {
+        /* размеры шрифта */
         --main-header-font-size-50px: calc(30px + (100vw - 320px)/(768 - 320)*10);
         --section-header-font-size-22px: calc(18px + (100vw - 320px)/(768 - 320)*4);
         --section-subheader-font-size-20px: calc(18px + (100vw - 320px)/(768 - 320)*2);
@@ -57,6 +77,7 @@
         --font-size-14px: calc(12px + (100vw - 320px)/(768 - 320)*2);
         --font-size-14-14-11px: calc(11px + (100vw - 320px)/(768 - 320)*3);
         --font-size-13-13-12px: calc(12px + (100vw - 320px)/(768 - 320)*1);
+        --font-size-13-13-11px: calc(11px + (100vw - 320px)/(768 - 320)*2);
         /* Отступы */
         --padding-side: calc(14px + (100vw - 320px)/(768 - 320)*36);
         --padding-vertical: calc(70px + (100vw - 320px)/(768 - 320)*20);
@@ -65,6 +86,7 @@
 
 @media screen and (max-width: 320px) {
     :root {
+        /* размеры шрифта */
         --main-header-font-size-50px: 30px;
         --section-header-font-size-22px: 18px;
         --section-subheader-font-size-20px: 18px;
@@ -77,6 +99,7 @@
         --font-size-14px: 12px;
         --font-size-14-14-11px: 11px;
         --font-size-13-13-12px: 12px;
+        --font-size-13-13-11px: 11px;
         /* Отступы */
         --padding-side: 14px;
         --padding-vertical: 70px;

@@ -1,13 +1,13 @@
 .account-button {
     background-color: #FFFFFF;
-    color: black;
+    color: var(--basic-var-color);
     border: 0;
     height: 32px;
     width: 100px;
     padding-left: 11px;
     padding-right: 3px;
     border-radius: 16px;
-    font-family: 'Inter', Arial, sans-serif;
+    font-family: var(--main-font);
     font-style: normal;
     font-weight: 500;
     font-size: 13px;

@@ -11,7 +11,7 @@ export default function Main(props) {
     const { } = props;
     return (
         <>  
-            <Header color={'#DDDEE3'} />
+            <Header color={'var(--basic-third-tint-color)'} />
             <Promo/>
             <AboutProject/>
             <Techs/>

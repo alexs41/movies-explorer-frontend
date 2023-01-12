@@ -1,11 +1,11 @@
 .tech-stack__item {
-    background-color: #E8E8E8;
+    background-color: var(--basic-fourth-tint-color);
     border-radius: 10px;
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: 'Inter', Arial, sans-serif;
+    font-family: var(--main-font);
     font-style: normal;
     font-weight: 400;
     font-size: var(--tech-stack-font-size-14px);

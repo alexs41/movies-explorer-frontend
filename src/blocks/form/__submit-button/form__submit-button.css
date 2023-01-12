@@ -1,9 +1,10 @@
 .form__submit-button {
     width: 80px;
+    min-width: 80px;
     height: 34px;
     border-radius: 17px;
     border: 0;
-    background-color: #3456F3;
+    background-color: var(--accent-blue-tint-color);
     background-image: url(../../../images/search-icon.svg);
     background-repeat: no-repeat;
     background-position: center;

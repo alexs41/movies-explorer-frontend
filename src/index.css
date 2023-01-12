@@ -90,6 +90,7 @@
 @import url(./blocks/form/__input/form__input.css);
 
 @import url(./blocks/filter-checkbox/filter-checkbox.css);
+@import url(./blocks/filter-checkbox/__header/filter-checkbox__header.css);
 
 @import url(./components/Movies/FilterCheckbox/FilterCheckbox.css);
 

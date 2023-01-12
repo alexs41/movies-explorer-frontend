@@ -1,4 +1,4 @@
 .main-screen {
-    background-color: #DDDEE3;
+    background-color: var(--basic-third-tint-color);
     margin: 0 auto;
 }

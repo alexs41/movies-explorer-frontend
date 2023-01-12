@@ -6,7 +6,7 @@
     /* min-height: 32px; */
     padding: 9px 19px;
     margin-right: auto;
-    font-family: 'Inter', Arial, sans-serif;
+    font-family: var(--main-font);
     font-style: normal;
     font-weight: 500;
     font-size: 12px;

@@ -1,5 +1,5 @@
 .profile-form-input__placeholder {
-    font-family: 'Inter', Arial, sans-serif;
+    font-family: var(--main-font);
     font-style: normal;
     font-weight: 500;
     font-size: 11px;

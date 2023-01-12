@@ -1,10 +1,10 @@
 .portfolio__header {
-    font-family: 'Inter', Arial, sans-serif;
+    font-family: var(--main-font);
     font-style: normal;
     font-weight: 400;
     font-size: var(--text-font-size-18px);
     line-height: 1.11;
-    color: #A0A0A0;
+    color: var(--basic-first-tint-color);
     text-align: left;
     margin: 0 auto 32px auto;
 }

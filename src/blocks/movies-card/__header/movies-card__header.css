@@ -1,15 +1,19 @@
 .movies-card__header {
     text-align: left;
     margin: 14px;
-    font-family: 'Inter', Arial, sans-serif;
+    font-family: var(--main-font);
     font-style: normal;
     font-weight: 500;
     font-size: 12px;
     line-height: 1.25;
-    color: #000000;
+    color: black;
     width: calc(100% - 70px);
-
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
+}
+@media screen and (max-width: 719px) {
+    .movies-card__header {
+        margin-left: 0;
+    }
 }

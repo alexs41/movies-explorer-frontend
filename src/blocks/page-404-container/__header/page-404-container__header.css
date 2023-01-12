@@ -1,6 +1,6 @@
 .page-404-container__header {
     margin: auto auto 0 auto;
-    font-family: 'Inter', Arial, sans-serif;
+    font-family: var(--main-font);
     font-style: normal;
     font-weight: 400;
     font-size: var(--font-size-140px);

@@ -1,11 +1,11 @@
 .header-right-side__login-button {
-    background-color: #3456F3;
+    background-color: var(--accent-blue-tint-color);
     color: white;
     border: 0;
     border-radius: 3px;
     padding: 8px 20px;
     margin-left: 30px;
-    font-family: 'Inter', Arial, sans-serif;
+    font-family: var(--main-font);
     font-style: normal;
     font-weight: 500;
     font-size: 12px;

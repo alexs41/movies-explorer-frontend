@@ -1,10 +1,10 @@
 .profile-form__input-error {
-    font-family: 'Inter', Arial, sans-serif;
+    font-family: var(--main-font);
     font-style: normal;
     font-weight: 400;
     font-size: 11px;
     line-height: 2;
     min-height: 51px;
     text-align: center;
-    color: #FF004C;
+    color: var(--critical-red-color);
 }
