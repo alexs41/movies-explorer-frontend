@@ -1,0 +1,23 @@
+.login {
+    width: 100%;
+    min-height: 100vh;
+    height: 1px;
+    padding-top: 70px;
+    padding-bottom: 70px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@media screen and (max-width: 768px) {
+    .login {
+        padding-top: calc(56px + (100vw - 320px)/(768 - 320)*14);
+        padding-bottom: calc(30px + (100vw - 320px)/(768 - 320)*40);
+    }
+}
+@media screen and (max-width: 320px) {
+    .login {
+        padding-top: 56px;
+        padding-bottom: 30px;
+    }
+}

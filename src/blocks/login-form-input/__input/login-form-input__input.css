@@ -1,0 +1,19 @@
+.login-form-input__input {
+    height: auto;
+    font-family: var(--main-font);
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.18;
+    width: 100%;
+    font-size: 13px;
+    background-color: var(--basic-seventh-tint-color);
+    border-radius: 8px;
+    height: 46px;
+    text-align: left;
+    margin-bottom: 10px;
+    border: 0;
+    outline: none;
+    box-sizing: border-box;
+    padding-left: 15px;
+    padding-right: 15px;
+}

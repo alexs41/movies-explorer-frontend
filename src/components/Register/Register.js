@@ -29,26 +29,29 @@ export default function Register(props) {
     }
     return (
         <>
-            <div className="register">
-                <div className="register-container">
-                    <div className="profile-form profile-form_register">
+            <div className="login">
+                <div className="login-container">
+                    <div className="login-form">
                         <div className="header__logo"></div>
-                        <h3 className="profile-form__header profile-form__header_left">Добро пожаловать!</h3>
+                        <h3 className="login-form__header">Добро пожаловать!</h3>
 
-                        <div className='profile-form-input-container'>
+                        <div className='login-form-input-container'>
                             
-                            <div className='profile-form-input profile-form-input_register'>
-                            <p className='profile-form-input__placeholder profile-form-input__placeholder_grey'>Имя</p>
-                                <input id="name-input" type="text" name="name" className="form__input profile-form__input profile-form__input_name profile-form__input_register" required minLength="2" maxLength="40" value={name} onChange={handleChangeName} />
+                            <div className='login-form-input'>
+                                <p className='login-form-input__placeholder'>Имя</p>
+                                <input id="name-input" type="text" name="name" className="login-form-input__input" required minLength="2" maxLength="40" value={name} onChange={handleChangeName} />
                             </div>
-                            <div className='profile-form-input profile-form-input_register'>
-                                <p className='profile-form-input__placeholder profile-form-input__placeholder_grey'>E-mail</p>
-                                <input id="email-input" type="text" name="email" className="form__input profile-form__input profile-form__input_email profile-form__input_register" required minLength="2" maxLength="40" value={email} onChange={handleChangeEmail}/>
+
+                            <div className='login-form-input'>
+                                <p className='login-form-input__placeholder'>E-mail</p>
+                                <input id="email-input" type="text" name="email" className="login-form-input__input" required minLength="2" maxLength="40" value={email} onChange={handleChangeEmail}/>
                             </div>
-                            <div className='profile-form-input profile-form-input_register'>
-                                <p className='profile-form-input__placeholder profile-form-input__placeholder_grey'>Пароль</p>
-                                <input id="name-input" type="text" name="name" className="form__input profile-form__input profile-form__input_name profile-form__input_register" required minLength="2" maxLength="40" value={password} onChange={handleChangePassword} />
+
+                            <div className='login-form-input'>
+                                <p className='login-form-input__placeholder'>Пароль</p>
+                                <input id="name-input" type="text" name="name" className="login-form-input__input" required minLength="2" maxLength="40" value={password} onChange={handleChangePassword} />
                             </div>
+
                             <div className="profile-form-down-part__span profile-form-down-part__span_register"><span className="profile-form__input-error">При обновлении профиля произошла ошибка.</span></div>
                         </div>
                         <div className="profile-form-down-part">

@@ -1,0 +1,21 @@
+.login-form {
+    max-height: 482px;
+    max-width: 436px;
+    width: 436px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 560px;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
+    align-items: flex-start;
+}
+@media screen and (max-width: 425px) {
+    .login-form {
+        align-items: center;
+        max-height: none;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}

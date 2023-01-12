@@ -124,8 +124,16 @@
 @import url(./blocks/profile-form-down-part/__сaption/profile-form-down-part__сaption.css);
 @import url(./blocks/profile-form-down-part/__link/profile-form-down-part__link.css);
 
-@import url(./blocks/register/register.css);
-@import url(./blocks/register-container/register-container.css);
+@import url(./blocks/login-form/login-form.css);
+@import url(./blocks/login-form/__header/login-form__header.css);
+@import url(./blocks/login-form-input-container/login-form-input-container.css);
+@import url(./blocks/login-form-input-container/__input-error/login-form-input-container__input-error.css);
+@import url(./blocks/login-form-input/login-form-input.css);
+@import url(./blocks/login-form-input/__placeholder/login-form-input__placeholder.css);
+@import url(./blocks/login-form-input/__input/login-form-input__input.css);
+
+@import url(./blocks/login/login.css);
+@import url(./blocks/login-container/login-container.css);
 
 @import url(./blocks/nav-bar/nav-bar.css);
 @import url(./blocks/nav-bar-menu/nav-bar-menu.css);

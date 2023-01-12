@@ -4,4 +4,6 @@
     justify-content: center;
     align-items: center;
     height: 100%;
+    padding-left: var(--padding-side);
+    padding-right: var(--padding-side);
 }

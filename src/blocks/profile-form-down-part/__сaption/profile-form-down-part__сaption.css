@@ -6,4 +6,5 @@
     line-height: 1.07;
     text-align: center;
     color: var(--basic-first-tint-color);
+    margin: 0 auto;
 }
