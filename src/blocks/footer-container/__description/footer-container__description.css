@@ -1,0 +1,5 @@
+.footer-container__description {
+    padding-bottom: 20px;
+    letter-spacing: normal;
+    font-size: var(--font-size-13-13-12px);
+}

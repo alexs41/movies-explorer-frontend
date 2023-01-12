@@ -4,7 +4,7 @@ export default function Footer(props) {
         <>
             <footer className="footer">
                 <div className="footer-container">
-                    <p className="description description_grey">Учебный проект Яндекс.Практикум х BeatFilm.</p>
+                    <p className="description description_grey footer-container__description">Учебный проект Яндекс.Практикум х BeatFilm.</p>
                     <div className="footer-container-caption">
                         <p className="description footer-container-caption__copyright">© 2023</p>
                         <ul className="footer-container-links">

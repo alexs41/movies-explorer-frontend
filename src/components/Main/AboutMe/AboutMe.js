@@ -22,7 +22,7 @@ export default function AboutMe(props) {
                     </div>
                     <div className="portfolio">
                         <h4 className="portfolio__header">Портфолио</h4>
-                        <ul style={{ listStyleType: "none", paddingLeft: 0 }}>
+                        <ul style={{ listStyleType: "none", paddingLeft: 0, margin: 0 }}>
                             <li className="portfolio-item"><a href="https://github.com/alexs41" className="link portfolio-item__link" target="_blank" rel="noreferrer">Статичный сайт<img src={arrow} className="portfolio-item__icon" alt="avatar" /></a></li>
                             <li className="portfolio-item"><a href="https://github.com/alexs41" className="link portfolio-item__link" target="_blank" rel="noreferrer">Адаптивный сайт<img src={arrow} className="portfolio-item__icon" alt="avatar" /></a></li>
                             <li className="portfolio-item"><a href="https://github.com/alexs41" className="link portfolio-item__link" target="_blank" rel="noreferrer">Одностраничное приложение<img src={arrow} className="portfolio-item__icon" alt="avatar" /></a></li>
