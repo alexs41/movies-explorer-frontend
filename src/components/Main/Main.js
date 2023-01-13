@@ -10,10 +10,12 @@ export default function Main(props) {
     return (
         <>  
             <Header color={'var(--basic-third-tint-color)'} />
-            <Promo/>
-            <AboutProject/>
-            <Techs/>
-            <AboutMe/>
+            <main className="main">
+                <Promo/>
+                <AboutProject/>
+                <Techs/>
+                <AboutMe/>
+            </main>
             <Footer/>
         </>
     );

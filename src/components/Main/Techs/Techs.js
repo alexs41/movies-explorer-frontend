@@ -17,7 +17,6 @@ export default function Techs(props) {
                     <div className="tech-stack__item">MongoDB</div>
                 </div>
             </div>
-
         </section>
     </>
     );

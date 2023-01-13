@@ -4,4 +4,9 @@
     border: 0;
     background-color: transparent;
     outline: none;
+    padding-left: 12px;
+}
+.form__input:focus {
+    background-color: var(--basic-sixth-tint-color);
+    border-radius: 17px;
 }
