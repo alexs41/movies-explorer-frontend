@@ -1,0 +1,23 @@
+.about-me-container-columns {
+    display: grid;
+    /* grid-template-columns: auto auto; */
+    grid-template-areas: "about-me-container about-me-image";
+    column-gap: 40px;
+    margin-top: 66px;
+    margin-bottom: 100px;
+}
+@media screen and (max-width: 768px) {
+    .about-me-container-columns {
+        column-gap: calc(20px + (100vw - 560px)/(768 - 560)*20);;
+    }
+}
+
+@media screen and (max-width: 560px) {
+    .about-me-container-columns {
+        grid-template-areas:    "about-me-image"
+                                "about-me-container";
+        gap: 40px;
+        margin-top: 60px;
+        margin-bottom: 70px;
+    }
+}

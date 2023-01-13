@@ -1,0 +1,22 @@
+.progress-columns {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    margin-top: 110px;
+    row-gap: 5px;
+}
+@media screen and (max-width: 1280px) {
+    .progress-columns {
+        margin-top: calc(90px + (100vw - 768px)/(1280 - 768)*20);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .progress-columns {
+        margin-top: calc(60px + (100vw - 320px)/(768 - 320)*30);
+    }
+}
+@media screen and (max-width: 320px) {
+    .progress-columns {
+        margin-top: 60px;
+    }
+}

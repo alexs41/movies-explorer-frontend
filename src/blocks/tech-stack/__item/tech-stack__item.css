@@ -1,0 +1,15 @@
+.tech-stack__item {
+    background-color: var(--basic-fourth-tint-color);
+    border-radius: 10px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--main-font);
+    font-style: normal;
+    font-weight: 400;
+    font-size: var(--tech-stack-font-size-14px);
+    line-height: 1.21;
+    min-width: 90px;
+    min-height: 60px;
+}

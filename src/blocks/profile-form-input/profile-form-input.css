@@ -1,0 +1,13 @@
+.profile-form-input {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    border-bottom: 1px solid var(--basic-fourth-tint-color);
+    height: 42px;
+    align-items: center;
+}
+
+.profile-form-input:last-of-type {
+    border-bottom: none;
+}

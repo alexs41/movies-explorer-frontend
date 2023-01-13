@@ -1,0 +1,18 @@
+.main-screen-container-columns-text__subheader {
+    font-family: var(--main-font);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+    mix-blend-mode: normal;
+    opacity: 0.5;
+    text-align: left;
+    max-width: 310px;
+}
+@media screen and (max-width: 810px) {
+    .main-screen-container-columns-text__subheader{
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

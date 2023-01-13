@@ -1,0 +1,4 @@
+.nav-bar-menu__item_active {
+    /* text-decoration: underline; */
+    border-bottom: 2px solid;
+}

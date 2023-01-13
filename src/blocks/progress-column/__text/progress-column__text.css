@@ -1,0 +1,9 @@
+.progress-column__text {
+    font-family: var(--main-font);
+    font-style: normal;
+    font-weight: 400;
+    font-size: var(--font-size-14-14-11px);
+    line-height: 1.21;
+    text-align: center;
+    margin: 9.5px auto;
+}

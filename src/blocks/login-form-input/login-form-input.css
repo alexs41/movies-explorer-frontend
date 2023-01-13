@@ -1,0 +1,11 @@
+.login-form-input {
+    display: flex;
+    flex-direction: column;
+    border: 0;
+    justify-content: space-between;
+    width: 100%;
+    /* border-bottom: 1px solid var(--basic-fourth-tint-color); */
+    /* height: 42px; */
+    align-items: center;
+    
+}

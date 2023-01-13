@@ -1,0 +1,11 @@
+.profile-form__input {
+    /* border-bottom: 1px solid var(--basic-fourth-tint-color); */
+    height: auto;
+    font-family: var(--main-font);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 1.18;
+    width: 85%;
+    text-align: right;
+}

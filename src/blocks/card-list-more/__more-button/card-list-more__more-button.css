@@ -1,0 +1,15 @@
+.card-list-more__more-button {
+    border: 0;
+    background-color: var(--basic-seventh-tint-color);
+    border-radius: 6px;
+    font-family: var(--main-font);
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.25;
+    height: 36px;
+    min-height: 36px;
+    max-width: 320px;
+    width: 100%;
+    min-width: 240px;
+}

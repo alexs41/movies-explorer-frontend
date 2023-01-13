@@ -1,0 +1,8 @@
+.movies-card {
+    width: 100%;
+    background: transparent;
+    overflow: hidden;
+    position: relative;
+    margin: 0 auto;
+    border-radius: 6px;
+}

@@ -1,0 +1,20 @@
+.account-button {
+    background-color: #FFFFFF;
+    color: var(--basic-var-color);
+    border: 0;
+    height: 32px;
+    width: 100px;
+    padding-left: 11px;
+    padding-right: 3px;
+    border-radius: 16px;
+    font-family: var(--main-font);
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 1.33;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 3px 14px 0 rgba(0, 0, 0, 0.08);
+}

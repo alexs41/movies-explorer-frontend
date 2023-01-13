@@ -1,0 +1,15 @@
+.movies-card__saved-button {
+    position: absolute;
+    width: 21px;
+    height: 21px;
+    min-width: 21px;
+    min-width: 21px;
+    background-image: url('../../../images/saved-icon.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+
+    border-radius: 30px;
+    border: 0;
+    top: 14px;
+    right: 14px;
+}

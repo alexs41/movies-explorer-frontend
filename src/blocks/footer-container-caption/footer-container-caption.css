@@ -1,0 +1,14 @@
+.footer-container-caption {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-top: 1px solid var(--basic-fourth-tint-color);
+    padding: 20px 0;
+
+}
+
+@media screen and (max-width: 425px) {
+    .footer-container-caption {
+        flex-direction: column-reverse;
+    }
+}

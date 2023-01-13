@@ -1,0 +1,17 @@
+.movies-card__duration {
+    margin: 0;
+    padding: 3px 4px;
+    position: absolute;
+    right: 0px;
+    bottom: 13px;
+    display: inline-block;
+
+    font-family: var(--main-font);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 11px;
+    line-height: .91;
+    color: var(--basic-first-tint-color);
+    background-color: var(--basic-seventh-tint-color);
+    border-radius: 3px;
+}

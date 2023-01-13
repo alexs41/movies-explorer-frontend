@@ -1,0 +1,20 @@
+.main-screen-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding-top: 75px;
+    padding-bottom: 75px;
+    padding-left: var(--padding-side);
+    padding-right: var(--padding-side);
+}
+@media screen and (max-width: 768px) {
+    .main-screen-container {
+        padding-bottom: calc(30px + (100vw - 320px)/(768 - 320)*45);
+    }
+}
+@media screen and (max-width: 320px) {
+    .main-screen-container {
+        padding-bottom: 30px;
+    }
+}

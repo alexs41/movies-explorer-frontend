@@ -1,0 +1,9 @@
+.description {
+    font-family: var(--main-font);
+    font-style: normal;
+    font-weight: 400;
+    font-size: var(--description-font-size-14px);
+    line-height: 1.45;
+    margin-top: 0;
+    margin-bottom: 0;
+}

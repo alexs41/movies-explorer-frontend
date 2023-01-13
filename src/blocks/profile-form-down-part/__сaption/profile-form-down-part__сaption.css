@@ -1,0 +1,10 @@
+.profile-form-down-part__сaption {
+    font-family: var(--main-font);
+    font-style: normal;
+    font-weight: 400;
+    font-size: var(--font-size-14px);
+    line-height: 1.07;
+    text-align: center;
+    color: var(--basic-first-tint-color);
+    margin: 0 auto;
+}

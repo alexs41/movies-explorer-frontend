@@ -1,0 +1,6 @@
+.about-container {
+    margin: 0 auto -11px auto;
+    max-width: 1140px;
+    padding-left: var(--padding-side);
+    padding-right: var(--padding-side);
+}

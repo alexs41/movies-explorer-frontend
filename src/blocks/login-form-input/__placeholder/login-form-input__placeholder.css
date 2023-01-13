@@ -1,0 +1,10 @@
+.login-form-input__placeholder {
+    font-family: var(--main-font);
+    font-style: normal;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 13px;
+    text-align: left;
+    margin-right: auto;
+    color: var(--basic-first-tint-color);
+}

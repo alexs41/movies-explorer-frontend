@@ -1,0 +1,24 @@
+.search-form-container {
+    max-width: 1140px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    column-gap: 40px;
+    row-gap: 22px;
+    border-bottom: 1px solid var(--basic-second-tint-color);
+    padding-bottom: 80px;
+}
+
+@media screen and (max-width: 768px) {
+    .search-form-container {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: calc(34px + (100vw - 320px)/(768 - 320)*46);
+    }
+}
+@media screen and (max-width: 320px) {
+    .search-form-container {
+        padding-bottom: 34px;
+    }
+}

@@ -1,0 +1,13 @@
+.section-header {
+    font-family: var(--main-font);
+    font-style: normal;
+    font-weight: 400;
+    font-size: var(--section-header-font-size-22px);
+    /* line-height: 2.22; */
+    letter-spacing: -0.04em;
+    text-align: left;
+    border-bottom: 1px solid black;
+    margin-top: 0;
+    padding-bottom: 23px;
+    line-height: 1.25;
+}

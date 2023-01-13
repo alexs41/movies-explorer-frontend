@@ -1,0 +1,11 @@
+.about-me-container-columns__image {
+    justify-self: end;
+    max-width: 270px;
+    border-radius: 10px;
+}
+@media screen and (max-width: 560px) {
+    .about-me-container-columns__image {
+        margin: 0 auto;
+        max-width: 292px;
+    }
+}

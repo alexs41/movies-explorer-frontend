@@ -1,0 +1,19 @@
+.tech-stack {
+    margin: 100px auto 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 84px);
+    grid-template-rows: repeat(auto-fit, 57px);
+    gap: 10px;
+    justify-content: center;
+    align-items: stretch;
+}
+@media screen and (max-width: 768px) {
+    .tech-stack {
+        margin-top: calc(47px + (100vw - 320px)/(768 - 320)*53);
+    }
+}
+@media screen and (max-width: 320px) {
+    .tech-stack {
+        margin-top: 47px;
+    }
+}

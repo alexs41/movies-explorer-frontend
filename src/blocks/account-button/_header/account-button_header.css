@@ -1,0 +1,8 @@
+@media screen and (max-width: 768px) {
+    .account-button_header {
+        visibility: hidden;
+        display: none;
+        height: 0;
+        padding: 0;
+    }
+}

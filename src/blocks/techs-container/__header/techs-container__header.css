@@ -1,0 +1,14 @@
+.techs-container__header {
+    margin-top: 90px;
+}
+
+@media screen and (max-width: 768px) {
+    .techs-container__header {
+        margin-top: calc(65px + (100vw - 320px)/(768 - 320)*25);
+    }
+}
+@media screen and (max-width: 320px) {
+    .techs-container__header {
+        margin-top: 65px;
+    }
+}
