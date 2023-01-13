@@ -12,7 +12,7 @@ export default function Movies(props) {
         <>  
             <Header/>
             <SearchForm children={<FilterCheckbox/>} />
-            <Preloader />
+            {/* <Preloader /> */}
             <MoviesCardList/>
             <Footer/>
         </>

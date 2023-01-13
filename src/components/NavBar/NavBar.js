@@ -6,11 +6,9 @@ import accountButtonIcon from '../../images/account-button-icon.svg';
 export default function NavBar(props) {
     const { isOpen, handleClickCloseButton } = props;
 
-    
-
     function handleBlackAreaClosePopup(e) {
-        if (e.target === e.currentTarget) { 
-            handleClickCloseButton(); 
+        if (e.target === e.currentTarget) {
+            handleClickCloseButton();
         };
     }
 
