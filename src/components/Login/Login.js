@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 
 export default function Login(props) {
     let { } = props;
 
-    const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
@@ -18,9 +17,6 @@ export default function Login(props) {
     // }, [currentUser, isOpen]);
 
     // Обработчик изменения инпута обновляет стейт
-    function handleChangeName(e) {
-        setName(e.target.value);
-    }
     function handleChangeEmail(e) {
         setEmail(e.target.value);
     }

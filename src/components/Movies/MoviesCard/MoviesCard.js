@@ -2,7 +2,7 @@ export default function MoviesCard(props) {
     const { card } = props;
     const thumbnail = 'https://avatars.mds.yandex.net/get-kinopoisk-image/6201401/e304da14-2f62-4342-9310-be50f82dd258/600x900';
     const nameEN = 'Humans';
-    const nameRU = 'Люди жфдылвоадфлыо фждылвоаждл жфдлывоаждлфыво жфдылвоаж длы';
+    const nameRU = 'Gimme Danger: История Игги и The Stooges';
     const duration =  127;
     return (
         <>

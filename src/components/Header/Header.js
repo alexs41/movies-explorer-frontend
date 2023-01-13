@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes, Redirect, useNavigate, Link, NavLink, useLocation } from "react-router-dom";
+import { useNavigate, Link, NavLink, useLocation } from "react-router-dom";
 import React, { useState, useEffect } from 'react';
 import accountButtonIcon from '../../images/account-button-icon.svg';
 

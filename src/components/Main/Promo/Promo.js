@@ -1,5 +1,5 @@
 import landingLogo from '../../../images/text__COLOR_landing-logo.png';
-import { Link, animateScroll as scroll } from "react-scroll";
+import { Link } from "react-scroll";
 
 export default function Promo(props) {
     const { } = props;
