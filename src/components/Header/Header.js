@@ -11,7 +11,6 @@ export default function Header(props) {
     function handleClickLogo() {
         navigate("/");
     }
-    console.log(location.pathname);
     const [centerPart, setCenterPart] = useState('');
     const [rightPart, setRightPart] = useState('');
 
