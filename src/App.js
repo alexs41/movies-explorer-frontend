@@ -89,7 +89,7 @@ function App() {
         if (e.target.classList.contains('movies-card__save-button')) {
           e.target.classList.add('movies-card__saved-button');
           e.target.classList.remove('movies-card__save-button');
-          e.target.classList.textContent('');
+          e.target.textContent='';
         }
       })
       .catch(err => {
@@ -99,10 +99,10 @@ function App() {
       });
   }
   // удаление фильма
-  function handleDeleteMovie(movie) {
+  function handleDeleteMovie(e, movie) {
     const savedMovie = savedMoviesList.find((item) => item.movieId === movie.id || item.movieId === movie.movieId );
     mainApi
-      .deleteMovie(savedMovie._id)
+      .deleteMovie(savedMovie)
       .then(() => {
         const newMoviesList = savedMoviesList.filter(m => {
           if (movie.id === m.movieId || movie.movieId === m.movieId) {
@@ -112,12 +112,24 @@ function App() {
           }
         });
         setSavedMoviesList(newMoviesList);
+        if (e.target.classList.contains('movies-card__saved-button')) {
+          e.target.classList.add('movies-card__save-button');
+          e.target.classList.remove('movies-card__saved-button');
+          e.target.textContent='Сохранить';
+        }
       })
       .catch(err => {
         alert(`Ошибка! ${err}`);
         console.log(`Ошибка! ${err}`); // выведем ошибку в консоль
         return err;
       });
+  }
+  function handleSaveDeleteClick(e, movie) {
+    if (e.target.classList.contains('movies-card__save-button')) {
+      handleSaveMovie(e, movie);
+    } else if (e.target.classList.contains('movies-card__saved-button')) {
+      handleDeleteMovie(e, movie);
+    }
   }
   return (
     <div className="App">
@@ -128,7 +140,7 @@ function App() {
             <Route path="/signup" element={<Register onRegister={handleRegister}/>} />
             <Route path="/" element={<Main />} />
             
-            <Route path="/movies" element={<PrivateRoute loggedIn={loggedIn}><Movies onSaveClick={handleSaveMovie} onDeleteClick={handleDeleteMovie} /></PrivateRoute>} />
+            <Route path="/movies" element={<PrivateRoute loggedIn={loggedIn}><Movies onSaveDeleteClick={handleSaveDeleteClick} /></PrivateRoute>} />
             <Route path="/saved-movies" element={<PrivateRoute loggedIn={loggedIn}><Movies /></PrivateRoute>} />
             <Route path="/profile" element={<PrivateRoute loggedIn={loggedIn}><Profile onLogout={handleLogout}/></PrivateRoute>} />
 

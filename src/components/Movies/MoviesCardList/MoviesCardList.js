@@ -1,6 +1,6 @@
 import MoviesCard from "../MoviesCard/MoviesCard";
 
-export default function MoviesCardList({ moviesArray, onSaveClick, onDeleteClick }) {
+export default function MoviesCardList({ moviesArray, onSaveDeleteClick }) {
     return (
         <>
             <div className="card-list">
@@ -8,7 +8,7 @@ export default function MoviesCardList({ moviesArray, onSaveClick, onDeleteClick
                     { moviesArray ? (
                         <div className="card-list-grid">
                             {moviesArray.map(movie => {
-                                return <MoviesCard key={movie.id} movie={movie} onSaveClick={onSaveClick} onDeleteClick={onDeleteClick} />;
+                                return <MoviesCard key={movie.id} movie={movie} onSaveDeleteClick={onSaveDeleteClick} />;
                             }
                             )}
                         </div>

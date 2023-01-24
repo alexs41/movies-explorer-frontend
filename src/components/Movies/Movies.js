@@ -8,7 +8,7 @@ import { moviesApi } from "../MoviesApi/MoviesApi";
 import React, { useState, useEffect } from 'react';
 import { transformMovies as transformMovies } from '../../utils/utils'
 
-export default function Movies({ onSaveClick, onDeleteClick }) {
+export default function Movies({ onSaveDeleteClick }) {
     const [moviesArray, setMoviesArray] = useState([]);
 
     async function renderInitialMovies() {
@@ -31,7 +31,7 @@ export default function Movies({ onSaveClick, onDeleteClick }) {
             <Header/>
             <SearchForm children={<FilterCheckbox/>} handleSubmit={renderInitialMovies} />
             {/* <Preloader /> */}
-            <MoviesCardList moviesArray={moviesArray} onSaveClick={onSaveClick} onDeleteClick={onDeleteClick} />
+            <MoviesCardList moviesArray={moviesArray} onSaveDeleteClick={onSaveDeleteClick} />
             <Footer/>
         </>
     );
