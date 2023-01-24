@@ -84,10 +84,10 @@ class MainApi {
             .then(this._checkResponse);
     }
 //--------------------------------------------
-    authorize = (password, email) => {
+    authorize = (email, password) => {
         return this._request({
           url: '/signin',
-          data: {password, email}
+          data: {email, password}
         });
       };
     

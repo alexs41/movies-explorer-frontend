@@ -13,27 +13,27 @@ import Page404 from "./components/Page404/Page404";
 import { moviesApi } from "./components/MoviesApi/MoviesApi";
 import { CurrentUserContext } from './contexts/CurrentUserContext';
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { mainApi } from "./components/MainApi/MainApi";
 
 function App() {
-  let navigate = useNavigate();
-  const successText = 'Вы успешно зарегистрировались!';
-  const failText = 'Что-то пошло не так! Попробуйте ещё раз.';
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const [currentUser, setCurrentUser] = useState({});
-  const [loggedIn, setLoggedIn] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(true);
 
   useEffect(() => {
     checkToken();
   }, []);
 
-  const handleLogin = async (password, email) => {
+  const handleLogin = async (email, password) => {
       try {
-          const data = await mainApi.authorize(password, email);
+          const data = await mainApi.authorize(email, password);
           if (!data.token) throw new Error('Missing token');
           localStorage.setItem('token', data.token);
-          checkToken();
+          await checkToken();
+          navigate('/movies');
       } catch (err) {
           console.log(`Ошибка! ${err}`); // выведем ошибку в консоль
       }
@@ -42,18 +42,17 @@ function App() {
   const handleLogout = () => {
       localStorage.removeItem('token');
       setLoggedIn(false);
-      navigate('/signin');
+      navigate('/');
   }
 
   const checkToken = async () => {
       const token = localStorage.getItem('token');
-      if (!token) ;
+      if (!token) {setLoggedIn(false)};
       try {
           mainApi.setToken(token);
           const data = await mainApi.getUser();
           setLoggedIn(true);
           setCurrentUser(data);
-          navigate('/');
       } catch (err) {
           console.log(`Ошибка! ${err}`); // выведем ошибку в консоль
       }
@@ -62,13 +61,16 @@ function App() {
   async function handleRegister (email, password, name) {
     try {
         const data = await mainApi.register(email, password, name);
-        navigate('/movies');
+        
         if (data.data._id) {
             // setRegisterPopup({
             //     iconPath: successIcon,
             //     infoText: successText
             // });
+            setCurrentUser(data.data);
             alert("Вы успешно зарегистрированы");
+
+            navigate('/movies');
         } else {
             // setRegisterPopup({
             //     iconPath: failIcon,
@@ -92,21 +94,21 @@ function App() {
     <div className="App">
       <div className="root">
         {/* <BrowserRouter> */}
+        <CurrentUserContext.Provider value={currentUser}>
           <Routes>
+            {console.log('loggedIn App', loggedIn)}
+            {console.log('currentUser App', currentUser)}
             <Route path="/signin" element={<Login onLogin={handleLogin}/>} />
             <Route path="/signup" element={<Register onRegister={handleRegister}/>} />
             <Route path="/" element={<Main />} />
-
             
-              <Route path="/movies" element={<PrivateRoute><Movies /></PrivateRoute>} />
-            
+            <Route path="/movies" element={<PrivateRoute loggedIn={loggedIn}><Movies /></PrivateRoute>} />
+            <Route path="/saved-movies" element={<PrivateRoute loggedIn={loggedIn}><Movies /></PrivateRoute>} />
+            <Route path="/profile" element={<PrivateRoute loggedIn={loggedIn}><Profile onLogout={handleLogout}/></PrivateRoute>} />
 
-            
-
-            <Route path="/saved-movies" element={<Movies />} />
-              <Route path="/profile" element={<Profile />} />
             <Route path='*' element={<Page404 />} />
           </Routes>
+          </CurrentUserContext.Provider>
         {/* </BrowserRouter> */}
       </div>
     </div>

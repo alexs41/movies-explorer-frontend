@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../react-mesto-api-full"
+		},
+		{
+			"path": "../../mesto"
+		}
+	],
+	"settings": {}
+}

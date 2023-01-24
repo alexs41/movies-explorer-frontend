@@ -1,8 +1,13 @@
-import React from 'react';
-import { Navigate } from "react-router-dom";
+import React, { useContext } from 'react';
+import { useLocation, Navigate } from "react-router-dom";
 
-const PrivateRoute = ({ loggedIn, children }) => {
-  return loggedIn ? children : <Navigate to="/signin" />;
+// function PrivateRoute({ loggedIn, path, children }) {
+//     return loggedIn ? children : <Navigate to="/" />;
+// }
+
+function PrivateRoute({ loggedIn, children }) {
+    const location = useLocation();
+    return loggedIn ? children : <Navigate to="/" state={{from: location}}/>;
 }
 
 export default PrivateRoute;

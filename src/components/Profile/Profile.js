@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import Header from '../Header/Header';
 
-export default function Profile(props) {
-    let { } = props;
+export default function Profile({ onLogout }) {
 
     const [name, setName] = useState('Незнакомец');
     const [email, setEmail] = useState('test@mail.ru');
@@ -55,7 +54,7 @@ export default function Profile(props) {
                                 <button className="button profile-form__submit-button profile-form__submit-button_edit-profile" type="submit" onClick={handleClickSaveButton}>Сохранить</button>
                              :  <>
                                     <button className="button profile-form__edit-button" type="submit" onClick={handleClickEditButton}>Редактировать</button>
-                                    <button className="button profile-form__exit-button" type="submit">Выйти из аккаунта</button>
+                                    <button className="button profile-form__exit-button" type="button" onClick={onLogout}>Выйти из аккаунта</button>
                                 </>
                             }
                         </div>
