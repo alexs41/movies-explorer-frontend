@@ -3,8 +3,11 @@ export default function MoviesCard({ movie, onSaveDeleteClick }) {
         <>
             <div className="movies-card">
                 <div className="movies-card-image-container">
-                    <img src={movie.thumbnail} alt={movie.nameEN} className="movies-card__image"/>
+                    <a target="_blank" rel="noreferrer" href={movie.trailerLink}>
+                        <img src={movie.thumbnail} alt={movie.nameEN} className="movies-card__image"/>
+                    </a>
                 </div>
+                
                 
                 <h4 className="movies-card__header">{movie.nameRU}</h4>
 
