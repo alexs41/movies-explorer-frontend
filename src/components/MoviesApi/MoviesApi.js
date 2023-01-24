@@ -1,6 +1,8 @@
+import { MOVIES_URL } from '../../utils/constants';
+
 class MoviesApi {
-    constructor(config){
-        this._url = config.url;
+    constructor(moviesUrl){
+        this._url = moviesUrl;
     }
     _checkResponse(res) {
         if (res.ok) {
@@ -9,14 +11,10 @@ class MoviesApi {
         // если ошибка, отклоняем промис
         return Promise.reject(`Ошибка: ${res.status}`);
     }
-    getMovies = () => {
-        return fetch(`${this._url}`, {
-        })
-        .then(this._checkResponse);
+    getMovies = async () => {
+        const res = await fetch(`${this._url}`, {});
+        return this._checkResponse(res);
     }
 }
-const apiConfig = {
-    url: "https://api.nomoreparties.co/beatfilm-movies",
-  }
 
-export const moviesApi = new MoviesApi(apiConfig);
+export const moviesApi = new MoviesApi(MOVIES_URL);

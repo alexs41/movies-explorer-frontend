@@ -19,9 +19,11 @@ import { mainApi } from "./components/MainApi/MainApi";
 function App() {
   const navigate = useNavigate();
   const location = useLocation();
+  const userContext = React.useContext(CurrentUserContext); 
 
   const [currentUser, setCurrentUser] = useState({});
   const [loggedIn, setLoggedIn] = useState(true);
+  const [savedMoviesList, setSavedMoviesList] = useState([]);
 
   useEffect(() => {
     checkToken();
@@ -63,26 +65,14 @@ function App() {
         const data = await mainApi.register(email, password, name);
         
         if (data.data._id) {
-            // setRegisterPopup({
-            //     iconPath: successIcon,
-            //     infoText: successText
-            // });
             setCurrentUser(data.data);
             alert("Вы успешно зарегистрированы");
 
             navigate('/movies');
         } else {
-            // setRegisterPopup({
-            //     iconPath: failIcon,
-            //     infoText: failText
-            // });
             alert("Во время регистрации произошла ошибка");
         }
     } catch (err) {
-        // setRegisterPopup({
-        //     iconPath: failIcon,
-        //     infoText: failText
-        // });
         alert(`Ошибка! ${err}`);
         console.log(`Ошибка! ${err}`); // выведем ошибку в консоль
         return err;
@@ -90,26 +80,61 @@ function App() {
         // infoTooltipOpen();
     }
 };
+  // cохранение фильма
+  function handleSaveMovie(e, movie) {
+    mainApi
+      .addMovie(movie)
+      .then(newMovie => {
+        setSavedMoviesList([newMovie, ...savedMoviesList]);
+        if (e.target.classList.contains('movies-card__save-button')) {
+          e.target.classList.add('movies-card__saved-button');
+          e.target.classList.remove('movies-card__save-button');
+          e.target.classList.textContent('');
+        }
+      })
+      .catch(err => {
+        alert(`Ошибка! ${err}`);
+        console.log(`Ошибка! ${err}`); // выведем ошибку в консоль
+        return err;
+      });
+  }
+  // удаление фильма
+  function handleDeleteMovie(movie) {
+    const savedMovie = savedMoviesList.find((item) => item.movieId === movie.id || item.movieId === movie.movieId );
+    mainApi
+      .deleteMovie(savedMovie._id)
+      .then(() => {
+        const newMoviesList = savedMoviesList.filter(m => {
+          if (movie.id === m.movieId || movie.movieId === m.movieId) {
+            return false;
+          } else {
+            return true;
+          }
+        });
+        setSavedMoviesList(newMoviesList);
+      })
+      .catch(err => {
+        alert(`Ошибка! ${err}`);
+        console.log(`Ошибка! ${err}`); // выведем ошибку в консоль
+        return err;
+      });
+  }
   return (
     <div className="App">
       <div className="root">
-        {/* <BrowserRouter> */}
-        <CurrentUserContext.Provider value={currentUser}>
+        <CurrentUserContext.Provider value={{currentUser, setCurrentUser}}>
           <Routes>
-            {console.log('loggedIn App', loggedIn)}
-            {console.log('currentUser App', currentUser)}
             <Route path="/signin" element={<Login onLogin={handleLogin}/>} />
             <Route path="/signup" element={<Register onRegister={handleRegister}/>} />
             <Route path="/" element={<Main />} />
             
-            <Route path="/movies" element={<PrivateRoute loggedIn={loggedIn}><Movies /></PrivateRoute>} />
+            <Route path="/movies" element={<PrivateRoute loggedIn={loggedIn}><Movies onSaveClick={handleSaveMovie} onDeleteClick={handleDeleteMovie} /></PrivateRoute>} />
             <Route path="/saved-movies" element={<PrivateRoute loggedIn={loggedIn}><Movies /></PrivateRoute>} />
             <Route path="/profile" element={<PrivateRoute loggedIn={loggedIn}><Profile onLogout={handleLogout}/></PrivateRoute>} />
 
             <Route path='*' element={<Page404 />} />
           </Routes>
           </CurrentUserContext.Provider>
-        {/* </BrowserRouter> */}
       </div>
     </div>
   );

@@ -67,11 +67,11 @@ class MainApi {
                     year: movie.year,
                     description: movie.description,
                     image: movie.image,
-                    trailer: movie.trailer,
+                    trailerLink: movie.trailerLink,
                     nameRU: movie.nameRU,
                     nameEN: movie.nameEN,
                     thumbnail: movie.thumbnail,
-                    movieId: movie.movieId
+                    movieId: movie.id
                 })
             })
             .then(this._checkResponse);

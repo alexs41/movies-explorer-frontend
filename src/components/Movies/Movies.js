@@ -4,16 +4,34 @@ import Preloader from "./Preloader/Preloader";
 import MoviesCardList from "./MoviesCardList/MoviesCardList";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
+import { moviesApi } from "../MoviesApi/MoviesApi";
+import React, { useState, useEffect } from 'react';
+import { transformMovies as transformMovies } from '../../utils/utils'
 
+export default function Movies({ onSaveClick, onDeleteClick }) {
+    const [moviesArray, setMoviesArray] = useState([]);
 
-export default function Movies(props) {
-    const { } = props;
+    async function renderInitialMovies() {
+        try {
+            let initialMovies = [];
+            initialMovies = await moviesApi.getMovies();
+            initialMovies = transformMovies(initialMovies);
+            setMoviesArray(initialMovies);
+        } catch (err) {
+            console.log(`Ошибка! ${err}`); // выведем ошибку в консоль
+        }
+    }
+    useEffect(() => {
+        renderInitialMovies();
+        
+    }, []);
+
     return (
         <>  
             <Header/>
-            <SearchForm children={<FilterCheckbox/>} />
+            <SearchForm children={<FilterCheckbox/>} handleSubmit={renderInitialMovies} />
             {/* <Preloader /> */}
-            <MoviesCardList/>
+            <MoviesCardList moviesArray={moviesArray} onSaveClick={onSaveClick} onDeleteClick={onDeleteClick} />
             <Footer/>
         </>
     );
