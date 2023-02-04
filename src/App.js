@@ -21,11 +21,12 @@ import faviconHidden from './images/vawing-hand.png';
 function App() {
   const navigate = useNavigate();
   const location = useLocation();
-  const userContext = React.useContext(CurrentUserContext); 
+  // const userContext = React.useContext(CurrentUserContext);
 
   const [currentUser, setCurrentUser] = useState({});
   const [loggedIn, setLoggedIn] = useState(true);
-  const [savedMoviesList, setSavedMoviesList] = useState([]);
+
+  const [savedMoviesArray, setSavedMoviesArray] = useState([]);
 
   // смена фавикона, когда пльзователь на другой вкладке
   const [isPageHidden, setIsPageHidden] = useState(false);
@@ -87,7 +88,7 @@ function App() {
           console.log(`Ошибка! ${err}`); // выведем ошибку в консоль
       }
   };
-
+  // регистрация
   async function handleRegister (email, password, name) {
     try {
         const data = await mainApi.register(email, password, name);
@@ -113,7 +114,7 @@ function App() {
     mainApi
       .addMovie(movie)
       .then(newMovie => {
-        setSavedMoviesList([newMovie, ...savedMoviesList]);
+        setSavedMoviesArray([newMovie, ...savedMoviesArray]);
         if (e.target.classList.contains('movies-card__save-button')) {
           e.target.classList.add('movies-card__saved-button');
           e.target.classList.remove('movies-card__save-button');
@@ -128,18 +129,18 @@ function App() {
   }
   // удаление фильма
   function handleDeleteMovie(e, movie) {
-    const savedMovie = savedMoviesList.find((item) => item.movieId === movie.id || item.movieId === movie.movieId );
+    const savedMovie = savedMoviesArray.find((item) => item.movieId === movie.id || item.movieId === movie.movieId );
     mainApi
       .deleteMovie(savedMovie)
       .then(() => {
-        const newMoviesList = savedMoviesList.filter(m => {
+        const newMoviesArray = savedMoviesArray.filter(m => {
           if (movie.id === m.movieId || movie.movieId === m.movieId) {
             return false;
           } else {
             return true;
           }
         });
-        setSavedMoviesList(newMoviesList);
+        setSavedMoviesArray(newMoviesArray);
         if (e.target.classList.contains('movies-card__saved-button')) {
           e.target.classList.add('movies-card__save-button');
           e.target.classList.remove('movies-card__saved-button');
@@ -168,8 +169,8 @@ function App() {
             <Route path="/signup" element={<Register onRegister={handleRegister}/>} />
             <Route path="/" element={<Main />} />
             
-            <Route path="/movies" element={<PrivateRoute loggedIn={loggedIn}><Movies onSaveDeleteClick={handleSaveDeleteClick} /></PrivateRoute>} />
-            <Route path="/saved-movies" element={<PrivateRoute loggedIn={loggedIn}><Movies /></PrivateRoute>} />
+            <Route path="/movies" element={<PrivateRoute loggedIn={loggedIn}><Movies onSaveDeleteClick={handleSaveDeleteClick} savedMoviesArray={savedMoviesArray} setSavedMoviesArray={setSavedMoviesArray} /></PrivateRoute>} />
+            <Route path="/saved-movies" element={<PrivateRoute loggedIn={loggedIn}><Movies onSaveDeleteClick={handleSaveDeleteClick} savedMoviesArray={savedMoviesArray} setSavedMoviesArray={setSavedMoviesArray} /></PrivateRoute>} />
             <Route path="/profile" element={<PrivateRoute loggedIn={loggedIn}><Profile onLogout={handleLogout}/></PrivateRoute>} />
 
             <Route path='*' element={<Page404 />} />

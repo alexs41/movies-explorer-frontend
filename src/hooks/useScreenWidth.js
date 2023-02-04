@@ -22,9 +22,8 @@ export default function useScreenWidth() {
         }, 1000); // 1 кадр в секунду
       }
     };
-
     return () => window.removeEventListener('resize', handleScreenResize);  // убираем при размонтировании
   }, [getScreenWidth]);
-
+  
   return screenWidth;
 }
