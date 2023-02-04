@@ -15,6 +15,8 @@ import { CurrentUserContext } from './contexts/CurrentUserContext';
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { mainApi } from "./components/MainApi/MainApi";
+import favicon from './images/logo.svg';
+import faviconHidden from './images/vawing-hand.png';
 
 function App() {
   const navigate = useNavigate();
@@ -24,6 +26,32 @@ function App() {
   const [currentUser, setCurrentUser] = useState({});
   const [loggedIn, setLoggedIn] = useState(true);
   const [savedMoviesList, setSavedMoviesList] = useState([]);
+
+  // смена фавикона, когда пльзователь на другой вкладке
+  const [isPageHidden, setIsPageHidden] = useState(false);
+  const [timerId, setTimerId] = useState('');
+
+  useEffect(() => {
+    const handleVisibilityChange = () => setIsPageHidden(document.hidden);
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+    return () => document.removeEventListener('visibilitychange', handleVisibilityChange);
+  }, []);
+
+  useEffect(() => {
+    if (isPageHidden) {
+      // Reset the favicon and title after 5 seconds
+      setTimerId(setTimeout(() => {
+        document.head.querySelector("[rel~=icon]").href = faviconHidden;
+        document.title = "Вы еще тут?";
+      }, 5000));
+    } else {
+      // Reset the favicon and title
+      clearTimeout(timerId);
+      setTimerId('');
+      document.head.querySelector("[rel~=icon]").href = favicon;
+      document.title = "React App";
+    }
+  }, [isPageHidden]);
 
   useEffect(() => {
     checkToken();

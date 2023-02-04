@@ -10,27 +10,30 @@ import { transformMovies as transformMovies } from '../../utils/utils'
 
 export default function Movies({ onSaveDeleteClick }) {
     const [moviesArray, setMoviesArray] = useState([]);
+    const [preloaderIsOpen, setPreloaderIsOpen] = useState(false);
 
     async function renderInitialMovies() {
         try {
+            setPreloaderIsOpen(true);
             let initialMovies = [];
             initialMovies = await moviesApi.getMovies();
             initialMovies = transformMovies(initialMovies);
             setMoviesArray(initialMovies);
         } catch (err) {
             console.log(`Ошибка! ${err}`); // выведем ошибку в консоль
+        } finally {
+            setPreloaderIsOpen(false);
         }
     }
     useEffect(() => {
         renderInitialMovies();
-        
     }, []);
 
     return (
         <>  
             <Header/>
             <SearchForm children={<FilterCheckbox/>} handleSubmit={renderInitialMovies} />
-            {/* <Preloader /> */}
+            <Preloader isOpen={preloaderIsOpen} />
             <MoviesCardList moviesArray={moviesArray} onSaveDeleteClick={onSaveDeleteClick} />
             <Footer/>
         </>
