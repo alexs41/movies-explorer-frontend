@@ -42,15 +42,15 @@ export default function SavedMovies({ onSaveDeleteClick, savedMoviesArray, setSa
 
     // поиск по запросу
     function handleSearchSubmit(inputValue) {
-        // const moviesList = filterMovies(savedMoviesArray, inputValue, shortMoviesCheckbox);
-        // if (moviesList.length === 0) {
-        //     setNotFound(true);
-        //     alert('Ничего не найдено.');
-        // } else {
-        //     setNotFound(false);
-        //     setFilteredMovies(moviesList);
-        //     setShowedMovies(moviesList);
-        // }
+        const moviesList = filterMovies(savedMoviesArray, inputValue, shortMoviesCheckbox);
+        if (moviesList.length === 0) {
+            setNotFound(true);
+            alert('Ничего не найдено.');
+        } else {
+            setNotFound(false);
+            setFilteredMovies(moviesList);
+            setShowedMovies(moviesList);
+        }
     }
 
     // состояние чекбокса
@@ -69,20 +69,20 @@ export default function SavedMovies({ onSaveDeleteClick, savedMoviesArray, setSa
     }
 
     // проверка чекбокса в локальном хранилище
-    // useEffect(() => {
-    //     if (localStorage.getItem(`${currentUser.email} - shortSavedMovies`) === 'true') {
-    //         setShortMoviesCheckbox(true);
-    //         setShowedMovies(filterShortMovies(savedMoviesArray));
-    //     } else {
-    //         setShortMoviesCheckbox(false);
-    //         setShowedMovies(savedMoviesArray);
-    //     }
-    // }, [savedMoviesArray, currentUser]);
+    useEffect(() => {
+        if (localStorage.getItem(`${currentUser.email} - shortSavedMovies`) === 'true') {
+            setShortMoviesCheckbox(true);
+            setShowedMovies(filterShortMovies(savedMoviesArray));
+        } else {
+            setShortMoviesCheckbox(false);
+            setShowedMovies(savedMoviesArray);
+        }
+    }, [savedMoviesArray, currentUser]);
 
-    // useEffect(() => {
-    //     setFilteredMovies(savedMoviesArray);
-    //     savedMoviesArray.length !== 0 ? setNotFound(false) : setNotFound(true);
-    // }, [savedMoviesArray]);
+    useEffect(() => {
+        setFilteredMovies(savedMoviesArray);
+        savedMoviesArray.length !== 0 ? setNotFound(false) : setNotFound(true);
+    }, [savedMoviesArray]);
 
     return (
         <>
@@ -96,7 +96,7 @@ export default function SavedMovies({ onSaveDeleteClick, savedMoviesArray, setSa
             {!NotFound && (
                 <MoviesCardList
                     moviesArray={showedMovies}
-                    savedMoviesArray={savedMoviesArray}
+                    // savedMoviesArray={savedMoviesArray}
                     onSaveDeleteClick={onSaveDeleteClick}
                     isSaved={true}
                 />

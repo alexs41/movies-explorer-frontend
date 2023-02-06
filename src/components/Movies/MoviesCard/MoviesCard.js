@@ -1,4 +1,4 @@
-export default function MoviesCard({ movie, onSaveDeleteClick, saveDeleteButton, isSaved }) {
+export default function MoviesCard({ movie, onSaveDeleteClick, isSaved }) {
     return (
         <>
             <div className="movies-card">
@@ -9,7 +9,6 @@ export default function MoviesCard({ movie, onSaveDeleteClick, saveDeleteButton,
                 </div>
                 <h4 className="movies-card__header">{movie.nameRU}</h4>
                 <p className="movies-card__duration">{`${Math.floor(movie.duration / 60)}ч ${movie.duration % 60}м`} </p>
-                {/* {saveDeleteButton} */}
 
                 {/* <button className="button movies-card__save-button" type="button" onClick={(e) => onSaveDeleteClick(e, movie)}>Сохранить</button> */}
                 {isSaved

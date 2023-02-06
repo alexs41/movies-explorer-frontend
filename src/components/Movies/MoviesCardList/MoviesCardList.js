@@ -52,7 +52,7 @@ export default function MoviesCardList({ moviesArray, savedMoviesArray, onSaveDe
                     {showMoviesArray ? (
                         <div className="card-list-grid">
                             {showMoviesArray.map(movie => {
-                                return <MoviesCard key={movie.id} movie={movie} onSaveDeleteClick={onSaveDeleteClick} saveDeleteButton={saveDeleteButton} isSaved={isSaved} />;
+                                return <MoviesCard key={movie.id || movie.movieId} movie={movie} onSaveDeleteClick={onSaveDeleteClick} saveDeleteButton={saveDeleteButton} isSaved={isSaved} />;
                             }
                             )}
                         </div>
