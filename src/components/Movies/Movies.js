@@ -5,34 +5,39 @@ import MoviesCardList from "./MoviesCardList/MoviesCardList";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import { moviesApi } from "../MoviesApi/MoviesApi";
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect, useContext, useRef, useLayoutEffect } from 'react';
+
 import { transformMovies as transformMovies, filterMovies as filterMovies, filterShortMovies as filterShortMovies } from '../../utils/utils';
 import { CurrentUserContext } from '../../contexts/CurrentUserContext';
 
-export default function Movies({ onSaveDeleteClick, savedMoviesArray, setSavedMoviesArray }) {
+export default function Movies({ onSaveDeleteClick, savedMoviesArray }) {
     const { currentUser, setCurrentUser } = useContext(CurrentUserContext);
+    const isFirstRun = useRef(true);
+    
+    const [serverMovies, setServerMovies] = useState([]); // все фильмы от сервера, для единоразового обращения к нему
+    const [searchedMovies, setSearchedMovies] = useState([]); // фильмы полученные с запроса
+    const [filteredMovies, setFilteredMovies] = useState([]); // отфильтрованные по чекбоксу и запросу фильмы
 
     const [preloaderIsOpen, setPreloaderIsOpen] = useState(false);
     const [shortMoviesCheckbox, setShortMoviesCheckbox] = useState(false); // состояние чекбокса
-    const [initialMovies, setInitialMovies] = useState([]); // фильмы полученные с запроса
-    const [filteredMovies, setFilteredMovies] = useState([]); // отфильтрованные по чекбоксу и запросу фильмы
     const [NotFound, setNotFound] = useState(false); // если по запросу ничего не найдено - скроем фильмы
-    const [serverMovies, setServerMovies] = useState([]); // все фильмы от сервера, для единоразового обращения к нему
+
 
     // поиск по массиву и установка состояния
     function handleSetFilteredMovies(allMovies, userQuery, shortMoviesCheckbox) {
         const moviesList = filterMovies(allMovies, userQuery, shortMoviesCheckbox);
-        debugger;
+
         if (moviesList.length === 0) {
             alert('Ничего не найдено.');
             setNotFound(true);
         } else {
             setNotFound(false);
         }
-        setInitialMovies(moviesList);
+        setSearchedMovies(moviesList);
         setFilteredMovies(
             shortMoviesCheckbox ? filterShortMovies(moviesList) : moviesList
         );
+
         localStorage.setItem(
             `${currentUser.email} - movies`,
             JSON.stringify(moviesList)
@@ -42,38 +47,50 @@ export default function Movies({ onSaveDeleteClick, savedMoviesArray, setSavedMo
     // поиск по запросу
     async function handleSearchSubmit(e) {
         e.preventDefault();
-        debugger;
-        localStorage.setItem(`${currentUser.email} - movieSearch`, currentUser.search);
+        const { name, value } = e.target[0];
+        await setCurrentUser({
+            ...currentUser,
+            [name]: value
+        });
+        localStorage.setItem(`${currentUser.email} - movieSearch`, e.target.value);
         localStorage.setItem(`${currentUser.email} - shortMovies`, shortMoviesCheckbox);
 
         if (serverMovies.length === 0) {
             setPreloaderIsOpen(true);
             try {
-                setServerMovies(await moviesApi.getMovies());
-                debugger;
-                handleSetFilteredMovies(
-                    transformMovies(serverMovies),
-                    currentUser.search,
-                    shortMoviesCheckbox
-                );
+                setServerMovies(transformMovies(await moviesApi.getMovies()));
+                    // handleSetFilteredMovies(
+                    //     // transformMovies(serverMovies),
+                    //     serverMovies,
+                    //     currentUser.search,
+                    //     shortMoviesCheckbox
+                    // ); 
             } catch {
                 alert('Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз.');
             } finally {
                 setPreloaderIsOpen(false);
-                debugger;
             }
-        } else {
+        } 
+        else {
             handleSetFilteredMovies(serverMovies, currentUser.search, shortMoviesCheckbox);
         }
     }
+
+    useEffect (() => {
+        if (isFirstRun.current) {
+        isFirstRun.current = false;
+        return;
+        }
+        handleSetFilteredMovies(serverMovies, currentUser.search, shortMoviesCheckbox);
+    }, [serverMovies]);
 
     // состояние чекбокса
     function handleShortMovies() {
         setShortMoviesCheckbox(!shortMoviesCheckbox);
         if (!shortMoviesCheckbox) {
-            setFilteredMovies(filterShortMovies(initialMovies));
+            setFilteredMovies(filterShortMovies(searchedMovies));
         } else {
-            setFilteredMovies(initialMovies);
+            setFilteredMovies(searchedMovies);
         }
         localStorage.setItem(`${currentUser.email} - shortMovies`, !shortMoviesCheckbox);
     }
@@ -84,7 +101,7 @@ export default function Movies({ onSaveDeleteClick, savedMoviesArray, setSavedMo
         } else {
             setShortMoviesCheckbox(false);
         }
-    }, [currentUser]);
+    }, []);
 
     // рендер фильмов из локального хранилища
     useEffect(() => {
@@ -92,7 +109,7 @@ export default function Movies({ onSaveDeleteClick, savedMoviesArray, setSavedMo
             const movies = JSON.parse(
                 localStorage.getItem(`${currentUser.email} - movies`)
             );
-            setInitialMovies(movies);
+            setSearchedMovies(movies);
             if (
                 localStorage.getItem(`${currentUser.email} - shortMovies`) === 'true'
             ) {
@@ -109,7 +126,7 @@ export default function Movies({ onSaveDeleteClick, savedMoviesArray, setSavedMo
     //         let initialMovies = [];
     //         initialMovies = await moviesApi.getMovies();
     //         initialMovies = transformMovies(initialMovies);
-    //         setMoviesArray(initialMovies);
+    //         setServerMovies(initialMovies);
     //     } catch (err) {
     //         console.log(`Ошибка! ${err}`); // выведем ошибку в консоль
     //     } finally {

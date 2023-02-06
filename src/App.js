@@ -17,6 +17,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { mainApi } from "./components/MainApi/MainApi";
 import favicon from './images/logo.svg';
 import faviconHidden from './images/vawing-hand.png';
+import SavedMovies from "./components/Movies/SavedMovies/SavedMovies";
 
 function App() {
   const navigate = useNavigate();
@@ -59,66 +60,66 @@ function App() {
   }, []);
 
   const handleLogin = async (email, password) => {
-      try {
-          const data = await mainApi.authorize(email, password);
-          if (!data.token) throw new Error('Missing token');
-          localStorage.setItem('token', data.token);
-          await checkToken();
-          navigate('/movies');
-      } catch (err) {
-          console.log(`Ошибка! ${err}`); // выведем ошибку в консоль
-      }
+    try {
+      const data = await mainApi.authorize(email, password);
+      if (!data.token) throw new Error('Missing token');
+      localStorage.setItem('token', data.token);
+      await checkToken();
+      navigate('/movies');
+    } catch (err) {
+      console.log(`Ошибка! ${err}`); // выведем ошибку в консоль
+    }
   };
 
   const handleLogout = () => {
-      localStorage.removeItem('token');
-      setLoggedIn(false);
-      navigate('/');
+    localStorage.removeItem('token');
+    setLoggedIn(false);
+    navigate('/');
   }
 
   const checkToken = async () => {
-      const token = localStorage.getItem('token');
-      if (!token) {setLoggedIn(false)};
-      try {
-          mainApi.setToken(token);
-          const data = await mainApi.getUser();
-          setLoggedIn(true);
-          setCurrentUser(data);
-      } catch (err) {
-          console.log(`Ошибка! ${err}`); // выведем ошибку в консоль
-      }
+    const token = localStorage.getItem('token');
+    if (!token) { setLoggedIn(false) };
+    try {
+      mainApi.setToken(token);
+      const data = await mainApi.getUser();
+      setLoggedIn(true);
+      setCurrentUser(data);
+    } catch (err) {
+      console.log(`Ошибка! ${err}`); // выведем ошибку в консоль
+    }
   };
   // регистрация
-  async function handleRegister (email, password, name) {
+  async function handleRegister(email, password, name) {
     try {
-        const data = await mainApi.register(email, password, name);
-        
-        if (data.data._id) {
-            setCurrentUser(data.data);
-            alert("Вы успешно зарегистрированы");
+      const data = await mainApi.register(email, password, name);
 
-            navigate('/movies');
-        } else {
-            alert("Во время регистрации произошла ошибка");
-        }
+      if (data.data._id) {
+        setCurrentUser(data.data);
+        alert("Вы успешно зарегистрированы");
+
+        navigate('/movies');
+      } else {
+        alert("Во время регистрации произошла ошибка");
+      }
     } catch (err) {
-        alert(`Ошибка! ${err}`);
-        console.log(`Ошибка! ${err}`); // выведем ошибку в консоль
-        return err;
+      alert(`Ошибка! ${err}`);
+      console.log(`Ошибка! ${err}`); // выведем ошибку в консоль
+      return err;
     } finally {
-        // infoTooltipOpen();
+      // infoTooltipOpen();
     }
-};
+  };
   // cохранение фильма
   function handleSaveMovie(e, movie) {
     mainApi
       .addMovie(movie)
       .then(newMovie => {
-        setSavedMoviesArray([newMovie, ...savedMoviesArray]);
+        setSavedMoviesArray([newMovie.data, ...savedMoviesArray]);
         if (e.target.classList.contains('movies-card__save-button')) {
           e.target.classList.add('movies-card__saved-button');
           e.target.classList.remove('movies-card__save-button');
-          e.target.textContent='';
+          e.target.textContent = '';
         }
       })
       .catch(err => {
@@ -127,9 +128,15 @@ function App() {
         return err;
       });
   }
+
+  // обновление savedMovies в localStorage
+  useEffect(() => {
+    localStorage.setItem(`${currentUser.email} - savedMovies`, JSON.stringify(savedMoviesArray));
+  }, [currentUser.email, savedMoviesArray]);
+
   // удаление фильма
   function handleDeleteMovie(e, movie) {
-    const savedMovie = savedMoviesArray.find((item) => item.movieId === movie.id || item.movieId === movie.movieId );
+    const savedMovie = savedMoviesArray.find((item) => item.movieId === movie.id || item.movieId === movie.movieId);
     mainApi
       .deleteMovie(savedMovie)
       .then(() => {
@@ -144,7 +151,7 @@ function App() {
         if (e.target.classList.contains('movies-card__saved-button')) {
           e.target.classList.add('movies-card__save-button');
           e.target.classList.remove('movies-card__saved-button');
-          e.target.textContent='Сохранить';
+          e.target.textContent = 'Сохранить';
         }
       })
       .catch(err => {
@@ -153,6 +160,7 @@ function App() {
         return err;
       });
   }
+
   function handleSaveDeleteClick(e, movie) {
     if (e.target.classList.contains('movies-card__save-button')) {
       handleSaveMovie(e, movie);
@@ -160,22 +168,23 @@ function App() {
       handleDeleteMovie(e, movie);
     }
   }
+
   return (
     <div className="App">
       <div className="root">
-        <CurrentUserContext.Provider value={{currentUser, setCurrentUser}}>
+        <CurrentUserContext.Provider value={{ currentUser, setCurrentUser }}>
           <Routes>
-            <Route path="/signin" element={<Login onLogin={handleLogin}/>} />
-            <Route path="/signup" element={<Register onRegister={handleRegister}/>} />
+            <Route path="/signin" element={<Login onLogin={handleLogin} />} />
+            <Route path="/signup" element={<Register onRegister={handleRegister} />} />
             <Route path="/" element={<Main />} />
-            
+
             <Route path="/movies" element={<PrivateRoute loggedIn={loggedIn}><Movies onSaveDeleteClick={handleSaveDeleteClick} savedMoviesArray={savedMoviesArray} setSavedMoviesArray={setSavedMoviesArray} /></PrivateRoute>} />
-            <Route path="/saved-movies" element={<PrivateRoute loggedIn={loggedIn}><Movies onSaveDeleteClick={handleSaveDeleteClick} savedMoviesArray={savedMoviesArray} setSavedMoviesArray={setSavedMoviesArray} /></PrivateRoute>} />
-            <Route path="/profile" element={<PrivateRoute loggedIn={loggedIn}><Profile onLogout={handleLogout}/></PrivateRoute>} />
+            <Route path="/saved-movies" element={<PrivateRoute loggedIn={loggedIn}><SavedMovies onSaveDeleteClick={handleSaveDeleteClick} savedMoviesArray={savedMoviesArray} setSavedMoviesArray={setSavedMoviesArray} /></PrivateRoute>} />
+            <Route path="/profile" element={<PrivateRoute loggedIn={loggedIn}><Profile onLogout={handleLogout} /></PrivateRoute>} />
 
             <Route path='*' element={<Page404 />} />
           </Routes>
-          </CurrentUserContext.Provider>
+        </CurrentUserContext.Provider>
       </div>
     </div>
   );

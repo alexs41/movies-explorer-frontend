@@ -4,7 +4,7 @@ import { DEVICE_PARAMS } from '../../../utils/constants';
 import useScreenWidth from '../../../hooks/useScreenWidth';
 import { useLocation } from 'react-router-dom';
 
-export default function MoviesCardList({ moviesArray, savedMoviesArray, onSaveDeleteClick }) {
+export default function MoviesCardList({ moviesArray, savedMoviesArray, onSaveDeleteClick, saveDeleteButton, isSaved }) {
     const screenWidth = useScreenWidth();
     const { desktop, tablet, mobile } = DEVICE_PARAMS;
     const location = useLocation();
@@ -52,7 +52,7 @@ export default function MoviesCardList({ moviesArray, savedMoviesArray, onSaveDe
                     {showMoviesArray ? (
                         <div className="card-list-grid">
                             {showMoviesArray.map(movie => {
-                                return <MoviesCard key={movie.id} movie={movie} onSaveDeleteClick={onSaveDeleteClick} />;
+                                return <MoviesCard key={movie.id} movie={movie} onSaveDeleteClick={onSaveDeleteClick} saveDeleteButton={saveDeleteButton} isSaved={isSaved} />;
                             }
                             )}
                         </div>
